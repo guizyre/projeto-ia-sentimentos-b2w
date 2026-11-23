@@ -1,0 +1,30 @@
+# Ambientes virtuais e Python
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Dados brutos e processados (nao redistribuir o corpus bruto no repositorio)
+data/*.csv
+data/*.tsv
+data/*.json
+data/*.parquet
+data/*.zip
+!data/.gitkeep
+
+# Modelos treinados pesados (opcional: remover daqui se quiser versionar modelos pequenos)
+models_saved/*.joblib
+models_saved/*.pkl
+!models_saved/.gitkeep
+
+# Sistema operacional e IDEs
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -1,0 +1,165 @@
+{
+  "dataset_metadata": {
+    "name": "B2W-Reviews01",
+    "source_repo": "https://github.com/americanas-tech/b2w-reviews01",
+    "huggingface_mirror": "https://huggingface.co/datasets/ruanchaves/b2w-reviews01",
+    "collection_period": "Janeiro a Maio de 2018 (Americanas.com)",
+    "language": "Português (pt-BR)",
+    "license": "CC BY-NC-SA 4.0 (Atribuição-NãoComercial-CompartilhaIgual 4.0 Internacional)",
+    "personal_columns_removed": [
+      "reviewer_id",
+      "reviewer_birth_year",
+      "reviewer_gender",
+      "reviewer_state"
+    ],
+    "default_rating_rule": {
+      "Negativo (0)": [
+        1,
+        2
+      ],
+      "Neutro (1)": [
+        3
+      ],
+      "Positivo (2)": [
+        4,
+        5
+      ]
+    }
+  },
+  "audit_cleaning_steps": {
+    "0_raw_rows": 132373,
+    "1_after_null_and_rating_filter": 129098,
+    "removed_null_or_invalid_rating": 3275,
+    "2_after_empty_or_short_text_filter": 128986,
+    "removed_empty_or_short_text": 112,
+    "3_after_duplicate_removal": 126691,
+    "removed_duplicates": 2295,
+    "4_final_labeled_rows": 126691,
+    "removed_by_mapping_rule": 0,
+    "retention_rate_pct": 95.71
+  },
+  "personal_columns_removed": [
+    "reviewer_id",
+    "reviewer_birth_year",
+    "reviewer_gender",
+    "reviewer_state"
+  ],
+  "conflicting_rating_texts": 69,
+  "inconsistent_neg_rating_yes_recommend": 2685,
+  "inconsistent_pos_rating_no_recommend": 1152,
+  "clean_rating_distribution": {
+    "1": 24607,
+    "2": 7992,
+    "3": 15843,
+    "4": 31782,
+    "5": 46467
+  },
+  "clean_sentiment_distribution": {
+    "Positivo": 78249,
+    "Negativo": 32599,
+    "Neutro": 15843
+  },
+  "clean_sentiment_pct": {
+    "Positivo": 61.76,
+    "Negativo": 25.73,
+    "Neutro": 12.51
+  },
+  "word_count_stats_by_sentiment": {
+    "Negativo": {
+      "avaliacoes": 32599,
+      "media": 32.33,
+      "desvio_padrao": 27.28,
+      "minimo": 1,
+      "mediana": 24.0,
+      "p90": 63.0,
+      "p95": 83.0,
+      "maximo": 628
+    },
+    "Neutro": {
+      "avaliacoes": 15843,
+      "media": 23.95,
+      "desvio_padrao": 23.2,
+      "minimo": 1,
+      "mediana": 17.0,
+      "p90": 46.0,
+      "p95": 62.0,
+      "maximo": 795
+    },
+    "Positivo": {
+      "avaliacoes": 78249,
+      "media": 18.7,
+      "desvio_padrao": 17.14,
+      "minimo": 1,
+      "mediana": 14.0,
+      "p90": 34.0,
+      "p95": 46.0,
+      "maximo": 696
+    }
+  },
+  "top10_categories": {
+    "Celulares e Smartphones": {
+      "total": 20091,
+      "pct_negativo": 19.2,
+      "pct_neutro": 11.0,
+      "pct_positivo": 69.7
+    },
+    "Eletroportáteis": {
+      "total": 11444,
+      "pct_negativo": 16.8,
+      "pct_neutro": 12.1,
+      "pct_positivo": 71.1
+    },
+    "Beleza e Perfumaria": {
+      "total": 8656,
+      "pct_negativo": 25.5,
+      "pct_neutro": 12.2,
+      "pct_positivo": 62.2
+    },
+    "Utilidades Domésticas": {
+      "total": 7899,
+      "pct_negativo": 24.7,
+      "pct_neutro": 13.3,
+      "pct_positivo": 62.0
+    },
+    "TV e Home Theater": {
+      "total": 7328,
+      "pct_negativo": 21.8,
+      "pct_neutro": 11.6,
+      "pct_positivo": 66.5
+    },
+    "Informática e Acessórios": {
+      "total": 7145,
+      "pct_negativo": 31.2,
+      "pct_neutro": 12.2,
+      "pct_positivo": 56.7
+    },
+    "Móveis": {
+      "total": 6634,
+      "pct_negativo": 43.9,
+      "pct_neutro": 16.2,
+      "pct_positivo": 39.9
+    },
+    "Brinquedos": {
+      "total": 4518,
+      "pct_negativo": 28.6,
+      "pct_neutro": 12.1,
+      "pct_positivo": 59.3
+    },
+    "Casa e Construção": {
+      "total": 4241,
+      "pct_negativo": 32.7,
+      "pct_neutro": 13.7,
+      "pct_positivo": 53.6
+    },
+    "Informática": {
+      "total": 4062,
+      "pct_negativo": 27.4,
+      "pct_neutro": 14.7,
+      "pct_positivo": 57.8
+    }
+  },
+  "date_range": {
+    "min": "2018-01-01 00:11:28",
+    "max": "2018-05-31 23:50:33"
+  }
+}

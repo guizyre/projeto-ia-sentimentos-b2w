@@ -1,0 +1,653 @@
+{
+  "final_rows_after_preprocessing": 126690,
+  "removed_empty_after_preprocessing": 1,
+  "nltk_raw_stopwords_count": 207,
+  "custom_stopwords_count": 200,
+  "protected_terms_removed_from_nltk": [
+    "mais",
+    "mas",
+    "muito",
+    "nem",
+    "não",
+    "sem",
+    "só"
+  ],
+  "vocabulary_stats": {
+    "total_tokens_before_stopwords": 2874823,
+    "total_tokens_after_preprocessing": 1833713,
+    "token_reduction_pct": 36.21,
+    "unique_vocab_before": 46982,
+    "unique_vocab_after": 46780,
+    "accented_tokens_after": 265048,
+    "accented_tokens_pct": 14.45,
+    "accented_vocab_after": 6625
+  },
+  "negation_presence_pct_by_sentiment": [
+    {
+      "Termo": "não / nao",
+      "Negativo": 72.35,
+      "Neutro": 36.21,
+      "Positivo": 15.43
+    },
+    {
+      "Termo": "nem",
+      "Negativo": 9.48,
+      "Neutro": 2.2,
+      "Positivo": 1.0
+    },
+    {
+      "Termo": "sem",
+      "Negativo": 8.65,
+      "Neutro": 5.11,
+      "Positivo": 5.41
+    },
+    {
+      "Termo": "nada",
+      "Negativo": 9.27,
+      "Neutro": 3.12,
+      "Positivo": 1.65
+    },
+    {
+      "Termo": "nunca",
+      "Negativo": 4.37,
+      "Neutro": 0.86,
+      "Positivo": 0.83
+    },
+    {
+      "Termo": "Qualquer negação",
+      "Negativo": 79.28,
+      "Neutro": 40.47,
+      "Positivo": 20.86
+    }
+  ],
+  "top20_words_before_stopwords": [
+    [
+      "e",
+      100545
+    ],
+    [
+      "o",
+      99808
+    ],
+    [
+      "a",
+      83380
+    ],
+    [
+      "de",
+      82321
+    ],
+    [
+      "produto",
+      69767
+    ],
+    [
+      "não",
+      60262
+    ],
+    [
+      "que",
+      59481
+    ],
+    [
+      "muito",
+      51295
+    ],
+    [
+      "é",
+      46423
+    ],
+    [
+      "do",
+      40469
+    ],
+    [
+      "com",
+      39327
+    ],
+    [
+      "para",
+      31486
+    ],
+    [
+      "um",
+      31412
+    ],
+    [
+      "bom",
+      25778
+    ],
+    [
+      "recomendo",
+      24469
+    ],
+    [
+      "entrega",
+      22423
+    ],
+    [
+      "da",
+      21990
+    ],
+    [
+      "no",
+      21248
+    ],
+    [
+      "em",
+      21184
+    ],
+    [
+      "mas",
+      18185
+    ]
+  ],
+  "top20_words_after_stopwords": [
+    [
+      "produto",
+      69767
+    ],
+    [
+      "não",
+      60262
+    ],
+    [
+      "muito",
+      51295
+    ],
+    [
+      "bom",
+      25778
+    ],
+    [
+      "recomendo",
+      24469
+    ],
+    [
+      "entrega",
+      22423
+    ],
+    [
+      "mas",
+      18185
+    ],
+    [
+      "mais",
+      17357
+    ],
+    [
+      "bem",
+      16757
+    ],
+    [
+      "qualidade",
+      16357
+    ],
+    [
+      "chegou",
+      15754
+    ],
+    [
+      "prazo",
+      15663
+    ],
+    [
+      "excelente",
+      14453
+    ],
+    [
+      "antes",
+      12203
+    ],
+    [
+      "ótimo",
+      11561
+    ],
+    [
+      "comprei",
+      11391
+    ],
+    [
+      "americanas",
+      11328
+    ],
+    [
+      "gostei",
+      10652
+    ],
+    [
+      "super",
+      10579
+    ],
+    [
+      "boa",
+      9312
+    ]
+  ],
+  "top15_unigrams_by_sentiment": {
+    "Negativo": [
+      [
+        "não",
+        37970
+      ],
+      [
+        "produto",
+        22404
+      ],
+      [
+        "muito",
+        7253
+      ],
+      [
+        "recebi",
+        6757
+      ],
+      [
+        "mais",
+        6721
+      ],
+      [
+        "comprei",
+        6169
+      ],
+      [
+        "mas",
+        5974
+      ],
+      [
+        "americanas",
+        5280
+      ],
+      [
+        "veio",
+        4822
+      ],
+      [
+        "ainda",
+        4739
+      ],
+      [
+        "entrega",
+        4136
+      ],
+      [
+        "nao",
+        4009
+      ],
+      [
+        "dia",
+        3795
+      ],
+      [
+        "nem",
+        3598
+      ],
+      [
+        "pois",
+        3560
+      ]
+    ],
+    "Neutro": [
+      [
+        "produto",
+        8180
+      ],
+      [
+        "não",
+        7924
+      ],
+      [
+        "bom",
+        5547
+      ],
+      [
+        "muito",
+        5104
+      ],
+      [
+        "mas",
+        4473
+      ],
+      [
+        "mais",
+        2973
+      ],
+      [
+        "bem",
+        2526
+      ],
+      [
+        "entrega",
+        2151
+      ],
+      [
+        "recomendo",
+        1788
+      ],
+      [
+        "boa",
+        1777
+      ],
+      [
+        "gostei",
+        1775
+      ],
+      [
+        "prazo",
+        1538
+      ],
+      [
+        "qualidade",
+        1471
+      ],
+      [
+        "chegou",
+        1425
+      ],
+      [
+        "porém",
+        1389
+      ]
+    ],
+    "Positivo": [
+      [
+        "produto",
+        39183
+      ],
+      [
+        "muito",
+        38938
+      ],
+      [
+        "recomendo",
+        19789
+      ],
+      [
+        "bom",
+        18670
+      ],
+      [
+        "entrega",
+        16136
+      ],
+      [
+        "não",
+        14368
+      ],
+      [
+        "excelente",
+        13745
+      ],
+      [
+        "bem",
+        12235
+      ],
+      [
+        "qualidade",
+        12150
+      ],
+      [
+        "prazo",
+        11896
+      ],
+      [
+        "chegou",
+        10795
+      ],
+      [
+        "ótimo",
+        10637
+      ],
+      [
+        "antes",
+        10271
+      ],
+      [
+        "super",
+        9648
+      ],
+      [
+        "mas",
+        7738
+      ]
+    ]
+  },
+  "top15_bigrams_by_sentiment": {
+    "Negativo": [
+      [
+        "não recebi",
+        4155
+      ],
+      [
+        "recebi produto",
+        2847
+      ],
+      [
+        "produto não",
+        2590
+      ],
+      [
+        "não recomendo",
+        2405
+      ],
+      [
+        "ainda não",
+        2237
+      ],
+      [
+        "não chegou",
+        1173
+      ],
+      [
+        "mas não",
+        984
+      ],
+      [
+        "não funciona",
+        984
+      ],
+      [
+        "comprei produto",
+        972
+      ],
+      [
+        "lojas americanas",
+        944
+      ],
+      [
+        "produto veio",
+        864
+      ],
+      [
+        "não gostei",
+        842
+      ],
+      [
+        "avaliar produto",
+        822
+      ],
+      [
+        "veio defeito",
+        809
+      ],
+      [
+        "produto ainda",
+        768
+      ]
+    ],
+    "Neutro": [
+      [
+        "produto bom",
+        1318
+      ],
+      [
+        "muito bom",
+        1165
+      ],
+      [
+        "bom produto",
+        726
+      ],
+      [
+        "antes prazo",
+        576
+      ],
+      [
+        "boa qualidade",
+        501
+      ],
+      [
+        "custo benefício",
+        487
+      ],
+      [
+        "ainda não",
+        469
+      ],
+      [
+        "gostei produto",
+        425
+      ],
+      [
+        "produto muito",
+        395
+      ],
+      [
+        "gostei muito",
+        382
+      ],
+      [
+        "mas não",
+        382
+      ],
+      [
+        "bom mas",
+        379
+      ],
+      [
+        "chegou antes",
+        320
+      ],
+      [
+        "produto chegou",
+        304
+      ],
+      [
+        "dentro prazo",
+        272
+      ]
+    ],
+    "Positivo": [
+      [
+        "muito bom",
+        11577
+      ],
+      [
+        "antes prazo",
+        6551
+      ],
+      [
+        "gostei muito",
+        4205
+      ],
+      [
+        "produto muito",
+        3930
+      ],
+      [
+        "chegou antes",
+        3396
+      ],
+      [
+        "super recomendo",
+        3243
+      ],
+      [
+        "produto excelente",
+        3136
+      ],
+      [
+        "ótima qualidade",
+        2944
+      ],
+      [
+        "ótimo produto",
+        2859
+      ],
+      [
+        "entrega rápida",
+        2629
+      ],
+      [
+        "excelente produto",
+        2437
+      ],
+      [
+        "muito bem",
+        2418
+      ],
+      [
+        "custo benefício",
+        2393
+      ],
+      [
+        "produto chegou",
+        2264
+      ],
+      [
+        "muito boa",
+        2127
+      ]
+    ]
+  },
+  "comparison_examples": [
+    {
+      "sentimento": "Negativo",
+      "nota": 1,
+      "texto_original": "O produto é completamente diferente da descrição e da foto. Não recomendo.",
+      "nltk_padrao_sem_protecao": "produto completamente diferente descrição foto recomendo",
+      "pipeline_recomendado": "produto completamente diferente descrição foto não recomendo",
+      "com_negation_marking": "produto completamente diferente descrição foto não_recomendo"
+    },
+    {
+      "sentimento": "Negativo",
+      "nota": 2,
+      "texto_original": "Impossível avaliar um produto o qual ainda não recebi!  DECEPCIONANTE!  Americanas.com, NUNCA MAIS!!!",
+      "nltk_padrao_sem_protecao": "impossível avaliar produto ainda recebi decepcionante americanas nunca",
+      "pipeline_recomendado": "impossível avaliar produto ainda não recebi decepcionante americanas nunca mais",
+      "com_negation_marking": "impossível avaliar produto ainda não_recebi decepcionante americanas nunca_mais"
+    },
+    {
+      "sentimento": "Negativo",
+      "nota": 1,
+      "texto_original": "Produto de péssima qualidade quase tudo de papelão não acompanha os carrinhos produto de qualidade inferior. Não comprem não iludam seus filhos. produto lixo",
+      "nltk_padrao_sem_protecao": "produto péssima qualidade quase tudo papelão acompanha carrinhos produto qualidade inferior comprem iludam filhos produto lixo",
+      "pipeline_recomendado": "produto péssima qualidade quase tudo papelão não acompanha carrinhos produto qualidade inferior não comprem não iludam filhos produto lixo",
+      "com_negation_marking": "produto péssima qualidade quase tudo papelão não_acompanha carrinhos produto qualidade inferior não_comprem não_iludam filhos produto lixo"
+    },
+    {
+      "sentimento": "Neutro",
+      "nota": 3,
+      "texto_original": "Produto bom mas frágil. Não é vidro, é plástico. Não sei quanto tempo resiste ao sol. Pra uso dentro de casa, talvez, dure bem.",
+      "nltk_padrao_sem_protecao": "produto bom frágil vidro plástico sei quanto tempo resiste sol pra uso dentro casa talvez dure bem",
+      "pipeline_recomendado": "produto bom mas frágil não vidro plástico não sei quanto tempo resiste sol pra uso dentro casa talvez dure bem",
+      "com_negation_marking": "produto bom mas frágil não_vidro plástico não_sei quanto tempo resiste sol pra uso dentro casa talvez dure bem"
+    },
+    {
+      "sentimento": "Positivo",
+      "nota": 5,
+      "texto_original": "Excelente produto, por fora em material acrílico super resistente e por dentro em adamantio, faz milagre com qualquer bebida. Sugiro aproveitarem a promoção antes que acabe.",
+      "nltk_padrao_sem_protecao": "excelente produto material acrílico super resistente dentro adamantio faz milagre qualquer bebida sugiro aproveitarem promoção antes acabe",
+      "pipeline_recomendado": "excelente produto material acrílico super resistente dentro adamantio faz milagre qualquer bebida sugiro aproveitarem promoção antes acabe",
+      "com_negation_marking": "excelente produto material acrílico super resistente dentro adamantio faz milagre qualquer bebida sugiro aproveitarem promoção antes acabe"
+    },
+    {
+      "sentimento": "Positivo",
+      "nota": 5,
+      "texto_original": "Ótimo custo-benefício, abre todos os programas pesados, rápido e não trava.",
+      "nltk_padrao_sem_protecao": "ótimo custo benefício abre todos programas pesados rápido trava",
+      "pipeline_recomendado": "ótimo custo benefício abre todos programas pesados rápido não trava",
+      "com_negation_marking": "ótimo custo benefício abre todos programas pesados rápido não_trava"
+    }
+  ]
+}
