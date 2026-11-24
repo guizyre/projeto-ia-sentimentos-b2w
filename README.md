@@ -24,20 +24,22 @@ projeto/
 ├── notebooks/
 │   ├── 01_eda_e_limpeza.ipynb               # [OK] Pessoa 1: auditoria, limpeza e gráficos EDA
 │   ├── 02_preprocessamento_pln.ipynb        # [OK] Pessoa 1: acentos, negações, bigramas e WordClouds
-│   ├── 03_treinamento_modelos.ipynb         # Pessoa 2: BoW vs TF-IDF, treino e hiperparâmetros
+│   ├── 03_treinamento_modelos.ipynb         # [OK] Pessoa 2: BoW vs TF-IDF, treino e hiperparâmetros
 │   └── 04_avaliacao_e_erros.ipynb           # Pessoa 3: matrizes, erros reais e análise por categoria
 ├── src/
 │   ├── __init__.py
 │   ├── data_loader.py                       # [OK] Pessoa 1: carga, privacidade, limpeza e rotulagem
 │   ├── preprocessing.py                     # [OK] Pessoa 1: normalização (acentos + negações)
-│   ├── models.py                            # Pessoa 2: vetorização e classificadores
+│   ├── models.py                            # [OK] Pessoa 2: vetorização e classificadores
 │   └── evaluation.py                        # Pessoa 3: métricas, F1-Macro e matriz de confusão
-├── models_saved/                            # Modelos e vetorizadores salvos (.joblib)
+├── models_saved/                            # [OK] Pessoa 2: modelos e vetorizadores salvos (.joblib)
 ├── reports/
-│   ├── figures/                             # [OK] 8 gráficos em 300 DPI (EDA + PLN)
+│   ├── figures/                             # [OK] 11 gráficos em 300 DPI (01–08: EDA + PLN; 09–11: modelagem)
 │   ├── eda_summary.json                     # [OK] Resumo quantitativo da EDA para o Streamlit
 │   ├── preprocessing_summary.json           # [OK] Resumo quantitativo do PLN para o Streamlit
+│   ├── model_results.json                   # [OK] Pessoa 2: métricas das 16 combinações, tuning e modelo final
 │   ├── guia_integracao_pessoa2_pessoa3.md   # [OK] Contrato de interfaces e exemplos para a equipe
+│   ├── relatorio_pessoa2.md                 # [OK] Pessoa 2: texto acadêmico (Seções 5–10) + roteiro oral
 │   └── relatorio_parte_pessoa1.md           # [OK] Texto acadêmico (Seções 1–4) + roteiro oral
 ├── app.py                                   # Pessoa 3: interface demonstrável em Streamlit
 ├── requirements.txt
@@ -72,3 +74,13 @@ projeto/
    ```powershell
    streamlit run app.py
    ```
+
+6. **Teste os módulos da Pessoa 2 (treinamento e avaliação dos classificadores):**
+   - Teste rápido, em amostra estratificada (sobrescreve `reports/model_results.json` com resultados da amostra):
+     ```powershell
+     python -m src.models 30000
+     ```
+   - Para a entrega, use o corpus completo:
+     ```powershell
+     python -m src.models
+     ```
