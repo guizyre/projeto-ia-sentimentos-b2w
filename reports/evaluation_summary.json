@@ -1,0 +1,1962 @@
+{
+  "n_train": 101352,
+  "n_test": 25338,
+  "final_model_info": {
+    "representation": "tfidf_bi",
+    "representation_label": "TF-IDF (Uni+Bigramas)",
+    "classifier": "svm_bal",
+    "classifier_label": "Linear SVM (balanced)",
+    "best_params": {
+      "clf__C": 0.1
+    },
+    "cv_f1_macro": 0.7248,
+    "test_f1_macro": 0.7318,
+    "test_accuracy": 0.8378,
+    "test_f1_weighted": 0.8333,
+    "per_class": {
+      "Negativo": {
+        "precision": 0.824865014536896,
+        "recall": 0.9138036809815951,
+        "f1": 0.8670595939751146,
+        "support": 6520
+      },
+      "Neutro": {
+        "precision": 0.4696969696969697,
+        "recall": 0.39129062795834646,
+        "f1": 0.42692373902564984,
+        "support": 3169
+      },
+      "Positivo": {
+        "precision": 0.9065589660743134,
+        "recall": 0.8964790082433383,
+        "f1": 0.9014908109497494,
+        "support": 15649
+      }
+    },
+    "confusion_matrix": [
+      [
+        5958,
+        358,
+        204
+      ],
+      [
+        687,
+        1240,
+        1242
+      ],
+      [
+        578,
+        1042,
+        14029
+      ]
+    ],
+    "confusion_matrix_normalized": [
+      [
+        0.9138,
+        0.0549,
+        0.0313
+      ],
+      [
+        0.2168,
+        0.3913,
+        0.3919
+      ],
+      [
+        0.0369,
+        0.0666,
+        0.8965
+      ]
+    ]
+  },
+  "best_accuracy_model": {
+    "representation": "tfidf_bi",
+    "classifier": "logreg",
+    "accuracy": 0.8452,
+    "f1_macro": 0.6993,
+    "recall_Neutro": 0.2256
+  },
+  "error_breakdown": {
+    "n_test": 25338,
+    "n_correct": 21227,
+    "n_errors": 4111,
+    "error_rate_pct": 16.22,
+    "errors_involving_neutral": 3329,
+    "errors_involving_neutral_pct": 80.98,
+    "extreme_polarity_errors": 782,
+    "extreme_polarity_errors_pct": 19.02,
+    "mixed_sentiment_errors_estimated": 1086,
+    "mixed_sentiment_errors_pct": 26.42,
+    "mean_words_correct": 22.5,
+    "mean_words_error": 25.12,
+    "pairs": [
+      {
+        "real": "Neutro",
+        "previsto": "Positivo",
+        "par": "Neutro → Positivo",
+        "quantidade": 1242,
+        "pct_dos_erros": 30.21,
+        "pct_do_teste": 4.9,
+        "confianca_media": 0.5762
+      },
+      {
+        "real": "Positivo",
+        "previsto": "Neutro",
+        "par": "Positivo → Neutro",
+        "quantidade": 1042,
+        "pct_dos_erros": 25.35,
+        "pct_do_teste": 4.11,
+        "confianca_media": 0.4938
+      },
+      {
+        "real": "Neutro",
+        "previsto": "Negativo",
+        "par": "Neutro → Negativo",
+        "quantidade": 687,
+        "pct_dos_erros": 16.71,
+        "pct_do_teste": 2.71,
+        "confianca_media": 0.5236
+      },
+      {
+        "real": "Positivo",
+        "previsto": "Negativo",
+        "par": "Positivo → Negativo",
+        "quantidade": 578,
+        "pct_dos_erros": 14.06,
+        "pct_do_teste": 2.28,
+        "confianca_media": 0.4887
+      },
+      {
+        "real": "Negativo",
+        "previsto": "Neutro",
+        "par": "Negativo → Neutro",
+        "quantidade": 358,
+        "pct_dos_erros": 8.71,
+        "pct_do_teste": 1.41,
+        "confianca_media": 0.4628
+      },
+      {
+        "real": "Negativo",
+        "previsto": "Positivo",
+        "par": "Negativo → Positivo",
+        "quantidade": 204,
+        "pct_dos_erros": 4.96,
+        "pct_do_teste": 0.81,
+        "confianca_media": 0.458
+      }
+    ]
+  },
+  "error_examples": {
+    "avaliacoes_mistas_produto_vs_entrega": [
+      {
+        "categoria_erro": "Avaliação mista (produto vs. entrega/ressalva)",
+        "overall_rating": 4,
+        "sentiment_real": "Positivo",
+        "sentiment_pred": "Neutro",
+        "confidence": 0.7503,
+        "prob_Negativo": 0.1201,
+        "prob_Neutro": 0.7503,
+        "prob_Positivo": 0.1296,
+        "site_category_lv1": "Suplementos e Vitaminas",
+        "recommend_to_a_friend": "Yes",
+        "review_text_original": "Produto é bom, porém a entrega não foi entregue no prazo prometido.",
+        "review_text_clean": "produto bom porém entrega não entregue prazo prometido"
+      },
+      {
+        "categoria_erro": "Avaliação mista (produto vs. entrega/ressalva)",
+        "overall_rating": 4,
+        "sentiment_real": "Positivo",
+        "sentiment_pred": "Neutro",
+        "confidence": 0.7052,
+        "prob_Negativo": 0.0851,
+        "prob_Neutro": 0.7052,
+        "prob_Positivo": 0.2097,
+        "site_category_lv1": "Utilidades Domésticas",
+        "recommend_to_a_friend": "Yes",
+        "review_text_original": "Produto bom custo benefício, não é sofisticado. Mas entregue em perfeitas condições.",
+        "review_text_clean": "produto bom custo benefício não sofisticado mas entregue perfeitas condições"
+      },
+      {
+        "categoria_erro": "Avaliação mista (produto vs. entrega/ressalva)",
+        "overall_rating": 3,
+        "sentiment_real": "Neutro",
+        "sentiment_pred": "Positivo",
+        "confidence": 0.6913,
+        "prob_Negativo": 0.0839,
+        "prob_Neutro": 0.2248,
+        "prob_Positivo": 0.6913,
+        "site_category_lv1": "Moda",
+        "recommend_to_a_friend": "Yes",
+        "review_text_original": "Produto de qualidade , Entrega muito boa ( 7 dias) , mas o tamanho das lentes é pequeno para o meu gosto.",
+        "review_text_clean": "produto qualidade entrega muito boa dias mas tamanho lentes pequeno gosto"
+      },
+      {
+        "categoria_erro": "Avaliação mista (produto vs. entrega/ressalva)",
+        "overall_rating": 4,
+        "sentiment_real": "Positivo",
+        "sentiment_pred": "Neutro",
+        "confidence": 0.6872,
+        "prob_Negativo": 0.114,
+        "prob_Neutro": 0.6872,
+        "prob_Positivo": 0.1988,
+        "site_category_lv1": "TV e Home Theater",
+        "recommend_to_a_friend": "Yes",
+        "review_text_original": "só atrasou alguns dias a entrega. Porém o produto é bom.",
+        "review_text_clean": "só atrasou alguns dias entrega porém produto bom"
+      }
+    ],
+    "neutro_previsto_como_positivo": [
+      {
+        "categoria_erro": "Neutro confundido com Positivo",
+        "overall_rating": 3,
+        "sentiment_real": "Neutro",
+        "sentiment_pred": "Positivo",
+        "confidence": 0.9501,
+        "prob_Negativo": 0.0214,
+        "prob_Neutro": 0.0285,
+        "prob_Positivo": 0.9501,
+        "site_category_lv1": "Celulares e Smartphones",
+        "recommend_to_a_friend": "Yes",
+        "review_text_original": "Amei recomendo e o melhor  de tudo câmera  perfeita_  e grande e fino maravilhoso",
+        "review_text_clean": "amei recomendo melhor tudo câmera perfeita grande fino maravilhoso"
+      },
+      {
+        "categoria_erro": "Neutro confundido com Positivo",
+        "overall_rating": 3,
+        "sentiment_real": "Neutro",
+        "sentiment_pred": "Positivo",
+        "confidence": 0.9379,
+        "prob_Negativo": 0.0252,
+        "prob_Neutro": 0.0369,
+        "prob_Positivo": 0.9379,
+        "site_category_lv1": "Celulares e Smartphones",
+        "recommend_to_a_friend": "Yes",
+        "review_text_original": "Eu amei o meu produto é ótimo celular pode comprar",
+        "review_text_clean": "amei produto ótimo celular pode comprar"
+      },
+      {
+        "categoria_erro": "Neutro confundido com Positivo",
+        "overall_rating": 3,
+        "sentiment_real": "Neutro",
+        "sentiment_pred": "Positivo",
+        "confidence": 0.9288,
+        "prob_Negativo": 0.0099,
+        "prob_Neutro": 0.0613,
+        "prob_Positivo": 0.9288,
+        "site_category_lv1": "Casa e Construção",
+        "recommend_to_a_friend": "Yes",
+        "review_text_original": "Produto muito bom e de ótima qualidade! Recomendo!!!",
+        "review_text_clean": "produto muito bom ótima qualidade recomendo"
+      },
+      {
+        "categoria_erro": "Neutro confundido com Positivo",
+        "overall_rating": 3,
+        "sentiment_real": "Neutro",
+        "sentiment_pred": "Positivo",
+        "confidence": 0.9179,
+        "prob_Negativo": 0.0272,
+        "prob_Neutro": 0.0549,
+        "prob_Positivo": 0.9179,
+        "site_category_lv1": "Informática e Acessórios",
+        "recommend_to_a_friend": "Yes",
+        "review_text_original": "Recomendo o produto, além de ter uma ótima qualidade é muito fácil de instalar. Parabéns a Americana pela rapidez na entrega.",
+        "review_text_clean": "recomendo produto além ter ótima qualidade muito fácil instalar parabéns americana rapidez entrega"
+      }
+    ],
+    "neutro_previsto_como_negativo": [
+      {
+        "categoria_erro": "Neutro confundido com Negativo",
+        "overall_rating": 3,
+        "sentiment_real": "Neutro",
+        "sentiment_pred": "Negativo",
+        "confidence": 0.9325,
+        "prob_Negativo": 0.9325,
+        "prob_Neutro": 0.0464,
+        "prob_Positivo": 0.0211,
+        "site_category_lv1": "Wearable",
+        "recommend_to_a_friend": "Yes",
+        "review_text_original": "Horrível. Depois d um mês d espera, nao veio o produto q eu paguei, veio um outro relógio. E ainda nao devolveram meu dinheiro 1.500 reais. Q decepção, loas Americanas!!!",
+        "review_text_clean": "horrível mês espera nao veio produto paguei veio outro relógio ainda nao devolveram dinheiro reais decepção loas americanas"
+      },
+      {
+        "categoria_erro": "Neutro confundido com Negativo",
+        "overall_rating": 3,
+        "sentiment_real": "Neutro",
+        "sentiment_pred": "Negativo",
+        "confidence": 0.9245,
+        "prob_Negativo": 0.9245,
+        "prob_Neutro": 0.0536,
+        "prob_Positivo": 0.0219,
+        "site_category_lv1": "Bebês",
+        "recommend_to_a_friend": "Yes",
+        "review_text_original": "Infelizmente, sou mais uma insatisfeita com o péssimo atendimento com o cliente, não recebi o produto.",
+        "review_text_clean": "infelizmente mais insatisfeita péssimo atendimento cliente não recebi produto"
+      },
+      {
+        "categoria_erro": "Neutro confundido com Negativo",
+        "overall_rating": 3,
+        "sentiment_real": "Neutro",
+        "sentiment_pred": "Negativo",
+        "confidence": 0.9083,
+        "prob_Negativo": 0.9083,
+        "prob_Neutro": 0.0551,
+        "prob_Positivo": 0.0365,
+        "site_category_lv1": "Celulares e Smartphones",
+        "recommend_to_a_friend": "Yes",
+        "review_text_original": "Um dos aparelhos veio com defeito e não ligou enviei para troca pelo codigo de postagem e ate hoje não tive retorno.",
+        "review_text_clean": "aparelhos veio defeito não ligou enviei troca codigo postagem ate hoje não retorno"
+      },
+      {
+        "categoria_erro": "Neutro confundido com Negativo",
+        "overall_rating": 3,
+        "sentiment_real": "Neutro",
+        "sentiment_pred": "Negativo",
+        "confidence": 0.8857,
+        "prob_Negativo": 0.8857,
+        "prob_Neutro": 0.0646,
+        "prob_Positivo": 0.0497,
+        "site_category_lv1": "Games",
+        "recommend_to_a_friend": "Yes",
+        "review_text_original": "O produto foi usado por apenas 03 dias e apresentou defeito . Estou aguardando desde o dia 27/03/2018 resposta do atendimento ao cliente para efetuar a troca ou o concerto do produto ou a devolução do dinheiro uma vez que paguei adiantado pelo produto .",
+        "review_text_clean": "produto usado apenas dias apresentou defeito aguardando desde dia resposta atendimento cliente efetuar troca concerto produto devolução dinheiro vez paguei adiantado produto"
+      }
+    ],
+    "positivo_previsto_como_neutro": [
+      {
+        "categoria_erro": "Positivo confundido com Neutro",
+        "overall_rating": 5,
+        "sentiment_real": "Positivo",
+        "sentiment_pred": "Neutro",
+        "confidence": 0.8138,
+        "prob_Negativo": 0.0721,
+        "prob_Neutro": 0.8138,
+        "prob_Positivo": 0.1142,
+        "site_category_lv1": "TV e Home Theater",
+        "recommend_to_a_friend": "Yes",
+        "review_text_original": "Utilizei pouco a tv, mas me parece ser boa. Até o momento eu recomendaria.",
+        "review_text_clean": "utilizei pouco tv mas parece boa momento recomendaria"
+      },
+      {
+        "categoria_erro": "Positivo confundido com Neutro",
+        "overall_rating": 4,
+        "sentiment_real": "Positivo",
+        "sentiment_pred": "Neutro",
+        "confidence": 0.7854,
+        "prob_Negativo": 0.0534,
+        "prob_Neutro": 0.7854,
+        "prob_Positivo": 0.1612,
+        "site_category_lv1": "Casa e Construção",
+        "recommend_to_a_friend": "Yes",
+        "review_text_original": "O produto é bom e bem pratico para uso. A maleta poderia ser um pouco melhor. Mas vale a pena pelo preço.",
+        "review_text_clean": "produto bom bem pratico uso maleta poderia pouco melhor mas vale pena preço"
+      },
+      {
+        "categoria_erro": "Positivo confundido com Neutro",
+        "overall_rating": 4,
+        "sentiment_real": "Positivo",
+        "sentiment_pred": "Neutro",
+        "confidence": 0.778,
+        "prob_Negativo": 0.1252,
+        "prob_Neutro": 0.778,
+        "prob_Positivo": 0.0968,
+        "site_category_lv1": "Eletroportáteis",
+        "recommend_to_a_friend": "Yes",
+        "review_text_original": "O PRODUTO É BOM ,MAS ALUZ FICA LIGADO O TEMPO TODO.",
+        "review_text_clean": "produto bom mas aluz fica ligado tempo todo"
+      },
+      {
+        "categoria_erro": "Positivo confundido com Neutro",
+        "overall_rating": 4,
+        "sentiment_real": "Positivo",
+        "sentiment_pred": "Neutro",
+        "confidence": 0.775,
+        "prob_Negativo": 0.092,
+        "prob_Neutro": 0.775,
+        "prob_Positivo": 0.133,
+        "site_category_lv1": "Celulares e Smartphones",
+        "recommend_to_a_friend": "Yes",
+        "review_text_original": "E um produto bom , inteligente, porem a bateria deveria ter um pouco de durabilidade !",
+        "review_text_clean": "produto bom inteligente porem bateria deveria ter pouco durabilidade"
+      }
+    ],
+    "falso_positivo_extremo_neg_para_pos": [
+      {
+        "categoria_erro": "Falso Positivo extremo (Negativo → Positivo)",
+        "overall_rating": 1,
+        "sentiment_real": "Negativo",
+        "sentiment_pred": "Positivo",
+        "confidence": 0.8832,
+        "prob_Negativo": 0.0312,
+        "prob_Neutro": 0.0855,
+        "prob_Positivo": 0.8832,
+        "site_category_lv1": "Cama, Mesa e Banho",
+        "recommend_to_a_friend": "Yes",
+        "review_text_original": "muito boa a entrega bem antes do previsto exelente loja superr recomendo",
+        "review_text_clean": "muito boa entrega bem antes previsto exelente loja superr recomendo"
+      },
+      {
+        "categoria_erro": "Falso Positivo extremo (Negativo → Positivo)",
+        "overall_rating": 1,
+        "sentiment_real": "Negativo",
+        "sentiment_pred": "Positivo",
+        "confidence": 0.8642,
+        "prob_Negativo": 0.0227,
+        "prob_Neutro": 0.1131,
+        "prob_Positivo": 0.8642,
+        "site_category_lv1": "Móveis",
+        "recommend_to_a_friend": "Yes",
+        "review_text_original": "Ótimo produto ...recomendo ..chegou antes do prazo",
+        "review_text_clean": "ótimo produto recomendo chegou antes prazo"
+      },
+      {
+        "categoria_erro": "Falso Positivo extremo (Negativo → Positivo)",
+        "overall_rating": 1,
+        "sentiment_real": "Negativo",
+        "sentiment_pred": "Positivo",
+        "confidence": 0.8301,
+        "prob_Negativo": 0.0496,
+        "prob_Neutro": 0.1202,
+        "prob_Positivo": 0.8301,
+        "site_category_lv1": "Informática",
+        "recommend_to_a_friend": "Yes",
+        "review_text_original": "Eu comprei e gostei muito, pelo preço e o que ele me oferece, valeu muito a pena",
+        "review_text_clean": "comprei gostei muito preço oferece valeu muito pena"
+      },
+      {
+        "categoria_erro": "Falso Positivo extremo (Negativo → Positivo)",
+        "overall_rating": 1,
+        "sentiment_real": "Negativo",
+        "sentiment_pred": "Positivo",
+        "confidence": 0.7924,
+        "prob_Negativo": 0.0629,
+        "prob_Neutro": 0.1447,
+        "prob_Positivo": 0.7924,
+        "site_category_lv1": "Informática",
+        "recommend_to_a_friend": "Yes",
+        "review_text_original": "produto excelente pra uso e ainda chegou antes do prazo muito obrigado recomendo.",
+        "review_text_clean": "produto excelente pra uso ainda chegou antes prazo muito obrigado recomendo"
+      }
+    ],
+    "falso_negativo_extremo_pos_para_neg": [
+      {
+        "categoria_erro": "Falso Negativo extremo (Positivo → Negativo)",
+        "overall_rating": 4,
+        "sentiment_real": "Positivo",
+        "sentiment_pred": "Negativo",
+        "confidence": 0.8953,
+        "prob_Negativo": 0.8953,
+        "prob_Neutro": 0.0572,
+        "prob_Positivo": 0.0475,
+        "site_category_lv1": "Beleza e Perfumaria",
+        "recommend_to_a_friend": "Yes",
+        "review_text_original": "Comprei o produto 2 vezes pela Epoca, na segunda vez recebi um produto falsificado e veio pela metade. Cheiro totalmente diferente do original.",
+        "review_text_clean": "comprei produto vezes epoca segunda vez recebi produto falsificado veio metade cheiro totalmente diferente original"
+      },
+      {
+        "categoria_erro": "Falso Negativo extremo (Positivo → Negativo)",
+        "overall_rating": 5,
+        "sentiment_real": "Positivo",
+        "sentiment_pred": "Negativo",
+        "confidence": 0.8844,
+        "prob_Negativo": 0.8844,
+        "prob_Neutro": 0.0667,
+        "prob_Positivo": 0.0489,
+        "site_category_lv1": "Informática",
+        "recommend_to_a_friend": "Yes",
+        "review_text_original": "como posso avaliar o produto se consta entregue e não recebi o produto.  E ninguém me da um posição, creio que vou ter entrar no PROCON para resolver.",
+        "review_text_clean": "posso avaliar produto consta entregue não recebi produto ninguém posição creio vou ter entrar procon resolver"
+      },
+      {
+        "categoria_erro": "Falso Negativo extremo (Positivo → Negativo)",
+        "overall_rating": 5,
+        "sentiment_real": "Positivo",
+        "sentiment_pred": "Negativo",
+        "confidence": 0.8685,
+        "prob_Negativo": 0.8685,
+        "prob_Neutro": 0.0658,
+        "prob_Positivo": 0.0657,
+        "site_category_lv1": "Informática e Acessórios",
+        "recommend_to_a_friend": "Yes",
+        "review_text_original": "COMPREI NO DIA 05/20/2018, ATÉ O PRESENTE MOMENTO NÃO RECEBI O PRODUTO, E O PIOR, VC RECEBE UMA LIGAÇÃO DAS AMERICANAS PERGUNTANDO SE EU TERIA RECEBIDO O PRODUTO, UMA PIADA. ESSAS EMPRESAS QUE VENDEM  ATRAVÉS DAS AMERICANAS NÃO TEM NENHUM COMPROMISSO,",
+        "review_text_clean": "comprei dia presente momento não recebi produto pior vc recebe ligação americanas perguntando recebido produto piada empresas vendem através americanas não nenhum compromisso"
+      },
+      {
+        "categoria_erro": "Falso Negativo extremo (Positivo → Negativo)",
+        "overall_rating": 5,
+        "sentiment_real": "Positivo",
+        "sentiment_pred": "Negativo",
+        "confidence": 0.8642,
+        "prob_Negativo": 0.8642,
+        "prob_Neutro": 0.0655,
+        "prob_Positivo": 0.0703,
+        "site_category_lv1": "Beleza e Perfumaria",
+        "recommend_to_a_friend": "Yes",
+        "review_text_original": "Não consigo avaliar o produto, pois ele não foi entregue! As lojas Americanas ofertou como alternativa somente o cancelamento da compra.",
+        "review_text_clean": "não consigo avaliar produto pois não entregue lojas americanas ofertou alternativa somente cancelamento compra"
+      }
+    ]
+  },
+  "label_noise_analysis": {
+    "n_test_negativo": 6520,
+    "n_test_positivo": 15649,
+    "neg_recommend_yes_all_test": 543,
+    "neg_recommend_yes_all_test_pct": 8.33,
+    "pos_recommend_no_all_test": 231,
+    "pos_recommend_no_all_test_pct": 1.48,
+    "extreme_neg_pred_pos_total": 204,
+    "extreme_neg_pred_pos_recommend_yes": 59,
+    "extreme_neg_pred_pos_recommend_yes_pct": 28.92,
+    "extreme_pos_pred_neg_total": 578,
+    "extreme_pos_pred_neg_recommend_no": 49,
+    "extreme_pos_pred_neg_recommend_no_pct": 8.48,
+    "nota1_pred_pos_total": 99,
+    "nota5_pred_neg_total": 283,
+    "pos_not_tested_or_received_count": 180,
+    "pos_not_tested_pred_neg_count": 57,
+    "examples_nota1_pred_positivo": [
+      {
+        "categoria_erro": "Ruído de rótulo (Nota 1 → Previsto Positivo)",
+        "overall_rating": 1,
+        "sentiment_real": "Negativo",
+        "sentiment_pred": "Positivo",
+        "confidence": 0.8832,
+        "prob_Negativo": 0.0312,
+        "prob_Neutro": 0.0855,
+        "prob_Positivo": 0.8832,
+        "site_category_lv1": "Cama, Mesa e Banho",
+        "recommend_to_a_friend": "Yes",
+        "review_text_original": "muito boa a entrega bem antes do previsto exelente loja superr recomendo",
+        "review_text_clean": "muito boa entrega bem antes previsto exelente loja superr recomendo"
+      },
+      {
+        "categoria_erro": "Ruído de rótulo (Nota 1 → Previsto Positivo)",
+        "overall_rating": 1,
+        "sentiment_real": "Negativo",
+        "sentiment_pred": "Positivo",
+        "confidence": 0.8642,
+        "prob_Negativo": 0.0227,
+        "prob_Neutro": 0.1131,
+        "prob_Positivo": 0.8642,
+        "site_category_lv1": "Móveis",
+        "recommend_to_a_friend": "Yes",
+        "review_text_original": "Ótimo produto ...recomendo ..chegou antes do prazo",
+        "review_text_clean": "ótimo produto recomendo chegou antes prazo"
+      },
+      {
+        "categoria_erro": "Ruído de rótulo (Nota 1 → Previsto Positivo)",
+        "overall_rating": 1,
+        "sentiment_real": "Negativo",
+        "sentiment_pred": "Positivo",
+        "confidence": 0.8301,
+        "prob_Negativo": 0.0496,
+        "prob_Neutro": 0.1202,
+        "prob_Positivo": 0.8301,
+        "site_category_lv1": "Informática",
+        "recommend_to_a_friend": "Yes",
+        "review_text_original": "Eu comprei e gostei muito, pelo preço e o que ele me oferece, valeu muito a pena",
+        "review_text_clean": "comprei gostei muito preço oferece valeu muito pena"
+      },
+      {
+        "categoria_erro": "Ruído de rótulo (Nota 1 → Previsto Positivo)",
+        "overall_rating": 1,
+        "sentiment_real": "Negativo",
+        "sentiment_pred": "Positivo",
+        "confidence": 0.7924,
+        "prob_Negativo": 0.0629,
+        "prob_Neutro": 0.1447,
+        "prob_Positivo": 0.7924,
+        "site_category_lv1": "Informática",
+        "recommend_to_a_friend": "Yes",
+        "review_text_original": "produto excelente pra uso e ainda chegou antes do prazo muito obrigado recomendo.",
+        "review_text_clean": "produto excelente pra uso ainda chegou antes prazo muito obrigado recomendo"
+      },
+      {
+        "categoria_erro": "Ruído de rótulo (Nota 1 → Previsto Positivo)",
+        "overall_rating": 1,
+        "sentiment_real": "Negativo",
+        "sentiment_pred": "Positivo",
+        "confidence": 0.7883,
+        "prob_Negativo": 0.1087,
+        "prob_Neutro": 0.103,
+        "prob_Positivo": 0.7883,
+        "site_category_lv1": "Celulares e Smartphones",
+        "recommend_to_a_friend": "Yes",
+        "review_text_original": "Excelente serviço de venda e entrega. Produto muito bonito.",
+        "review_text_clean": "excelente serviço venda entrega produto muito bonito"
+      },
+      {
+        "categoria_erro": "Ruído de rótulo (Nota 1 → Previsto Positivo)",
+        "overall_rating": 1,
+        "sentiment_real": "Negativo",
+        "sentiment_pred": "Positivo",
+        "confidence": 0.7529,
+        "prob_Negativo": 0.0701,
+        "prob_Neutro": 0.177,
+        "prob_Positivo": 0.7529,
+        "site_category_lv1": "Games",
+        "recommend_to_a_friend": "Yes",
+        "review_text_original": "é muito bom mesmo. vale a pena.O texto de análise é muito curto.",
+        "review_text_clean": "muito bom vale pena texto análise muito curto"
+      }
+    ],
+    "examples_nota5_pred_negativo": [
+      {
+        "categoria_erro": "Ruído de rótulo / Ironia (Nota 5 → Previsto Negativo)",
+        "overall_rating": 5,
+        "sentiment_real": "Positivo",
+        "sentiment_pred": "Negativo",
+        "confidence": 0.8844,
+        "prob_Negativo": 0.8844,
+        "prob_Neutro": 0.0667,
+        "prob_Positivo": 0.0489,
+        "site_category_lv1": "Informática",
+        "recommend_to_a_friend": "Yes",
+        "review_text_original": "como posso avaliar o produto se consta entregue e não recebi o produto.  E ninguém me da um posição, creio que vou ter entrar no PROCON para resolver.",
+        "review_text_clean": "posso avaliar produto consta entregue não recebi produto ninguém posição creio vou ter entrar procon resolver"
+      },
+      {
+        "categoria_erro": "Ruído de rótulo / Ironia (Nota 5 → Previsto Negativo)",
+        "overall_rating": 5,
+        "sentiment_real": "Positivo",
+        "sentiment_pred": "Negativo",
+        "confidence": 0.8685,
+        "prob_Negativo": 0.8685,
+        "prob_Neutro": 0.0658,
+        "prob_Positivo": 0.0657,
+        "site_category_lv1": "Informática e Acessórios",
+        "recommend_to_a_friend": "Yes",
+        "review_text_original": "COMPREI NO DIA 05/20/2018, ATÉ O PRESENTE MOMENTO NÃO RECEBI O PRODUTO, E O PIOR, VC RECEBE UMA LIGAÇÃO DAS AMERICANAS PERGUNTANDO SE EU TERIA RECEBIDO O PRODUTO, UMA PIADA. ESSAS EMPRESAS QUE VENDEM  ATRAVÉS DAS AMERICANAS NÃO TEM NENHUM COMPROMISSO,",
+        "review_text_clean": "comprei dia presente momento não recebi produto pior vc recebe ligação americanas perguntando recebido produto piada empresas vendem através americanas não nenhum compromisso"
+      },
+      {
+        "categoria_erro": "Ruído de rótulo / Ironia (Nota 5 → Previsto Negativo)",
+        "overall_rating": 5,
+        "sentiment_real": "Positivo",
+        "sentiment_pred": "Negativo",
+        "confidence": 0.8642,
+        "prob_Negativo": 0.8642,
+        "prob_Neutro": 0.0655,
+        "prob_Positivo": 0.0703,
+        "site_category_lv1": "Beleza e Perfumaria",
+        "recommend_to_a_friend": "Yes",
+        "review_text_original": "Não consigo avaliar o produto, pois ele não foi entregue! As lojas Americanas ofertou como alternativa somente o cancelamento da compra.",
+        "review_text_clean": "não consigo avaliar produto pois não entregue lojas americanas ofertou alternativa somente cancelamento compra"
+      },
+      {
+        "categoria_erro": "Ruído de rótulo / Ironia (Nota 5 → Previsto Negativo)",
+        "overall_rating": 5,
+        "sentiment_real": "Positivo",
+        "sentiment_pred": "Negativo",
+        "confidence": 0.8535,
+        "prob_Negativo": 0.8535,
+        "prob_Neutro": 0.0816,
+        "prob_Positivo": 0.0649,
+        "site_category_lv1": "Informática",
+        "recommend_to_a_friend": "Yes",
+        "review_text_original": "Não recebi ainda Não recebi ainda Não recebi ainda",
+        "review_text_clean": "não recebi ainda não recebi ainda não recebi ainda"
+      },
+      {
+        "categoria_erro": "Ruído de rótulo / Ironia (Nota 5 → Previsto Negativo)",
+        "overall_rating": 5,
+        "sentiment_real": "Positivo",
+        "sentiment_pred": "Negativo",
+        "confidence": 0.8267,
+        "prob_Negativo": 0.8267,
+        "prob_Neutro": 0.1248,
+        "prob_Positivo": 0.0485,
+        "site_category_lv1": "Saúde",
+        "recommend_to_a_friend": "Yes",
+        "review_text_original": "fica meio dificil de avaliar um produto que eu não recebi...",
+        "review_text_clean": "fica meio dificil avaliar produto não recebi"
+      },
+      {
+        "categoria_erro": "Ruído de rótulo / Ironia (Nota 5 → Previsto Negativo)",
+        "overall_rating": 5,
+        "sentiment_real": "Positivo",
+        "sentiment_pred": "Negativo",
+        "confidence": 0.8001,
+        "prob_Negativo": 0.8001,
+        "prob_Neutro": 0.1192,
+        "prob_Positivo": 0.0807,
+        "site_category_lv1": "Suplementos e Vitaminas",
+        "recommend_to_a_friend": "No",
+        "review_text_original": "Não recebi o produto que deveria ter sido entregue desde 06/03.",
+        "review_text_clean": "não recebi produto deveria ter sido entregue desde"
+      }
+    ]
+  },
+  "category_performance": [
+    {
+      "categoria": "Celulares e Smartphones",
+      "n_test": 4055,
+      "pct_negativo": 19.2,
+      "pct_neutro": 11.5,
+      "pct_positivo": 69.3,
+      "accuracy": 0.8358,
+      "f1_macro": 0.692,
+      "f1_Negativo": 0.8314,
+      "f1_Neutro": 0.335,
+      "f1_Positivo": 0.9097,
+      "recall_Negativo": 0.9038,
+      "recall_Neutro": 0.2925,
+      "recall_Positivo": 0.9068
+    },
+    {
+      "categoria": "Eletroportáteis",
+      "n_test": 2317,
+      "pct_negativo": 16.9,
+      "pct_neutro": 11.4,
+      "pct_positivo": 71.6,
+      "accuracy": 0.8502,
+      "f1_macro": 0.7232,
+      "f1_Negativo": 0.8407,
+      "f1_Neutro": 0.4134,
+      "f1_Positivo": 0.9157,
+      "recall_Negativo": 0.8954,
+      "recall_Neutro": 0.3736,
+      "recall_Positivo": 0.9157
+    },
+    {
+      "categoria": "Beleza e Perfumaria",
+      "n_test": 1784,
+      "pct_negativo": 25.4,
+      "pct_neutro": 12.0,
+      "pct_positivo": 62.6,
+      "accuracy": 0.838,
+      "f1_macro": 0.7322,
+      "f1_Negativo": 0.8574,
+      "f1_Neutro": 0.4388,
+      "f1_Positivo": 0.9004,
+      "recall_Negativo": 0.9161,
+      "recall_Neutro": 0.4019,
+      "recall_Positivo": 0.8899
+    },
+    {
+      "categoria": "Utilidades Domésticas",
+      "n_test": 1546,
+      "pct_negativo": 25.1,
+      "pct_neutro": 13.3,
+      "pct_positivo": 61.6,
+      "accuracy": 0.8461,
+      "f1_macro": 0.764,
+      "f1_Negativo": 0.8774,
+      "f1_Neutro": 0.5099,
+      "f1_Positivo": 0.9046,
+      "recall_Negativo": 0.8943,
+      "recall_Neutro": 0.5,
+      "recall_Positivo": 0.9013
+    },
+    {
+      "categoria": "Informática e Acessórios",
+      "n_test": 1447,
+      "pct_negativo": 31.8,
+      "pct_neutro": 13.0,
+      "pct_positivo": 55.2,
+      "accuracy": 0.8189,
+      "f1_macro": 0.7147,
+      "f1_Negativo": 0.8859,
+      "f1_Neutro": 0.3871,
+      "f1_Positivo": 0.8711,
+      "recall_Negativo": 0.9196,
+      "recall_Neutro": 0.3511,
+      "recall_Positivo": 0.8711
+    },
+    {
+      "categoria": "TV e Home Theater",
+      "n_test": 1444,
+      "pct_negativo": 22.3,
+      "pct_neutro": 10.7,
+      "pct_positivo": 67.0,
+      "accuracy": 0.8255,
+      "f1_macro": 0.692,
+      "f1_Negativo": 0.8309,
+      "f1_Neutro": 0.3455,
+      "f1_Positivo": 0.8995,
+      "recall_Negativo": 0.8851,
+      "recall_Neutro": 0.3355,
+      "recall_Positivo": 0.8842
+    },
+    {
+      "categoria": "Móveis",
+      "n_test": 1303,
+      "pct_negativo": 42.7,
+      "pct_neutro": 15.8,
+      "pct_positivo": 41.5,
+      "accuracy": 0.8289,
+      "f1_macro": 0.7593,
+      "f1_Negativo": 0.8983,
+      "f1_Neutro": 0.5051,
+      "f1_Positivo": 0.8744,
+      "recall_Negativo": 0.9299,
+      "recall_Neutro": 0.4854,
+      "recall_Positivo": 0.8558
+    },
+    {
+      "categoria": "Brinquedos",
+      "n_test": 941,
+      "pct_negativo": 27.3,
+      "pct_neutro": 12.1,
+      "pct_positivo": 60.6,
+      "accuracy": 0.8555,
+      "f1_macro": 0.7633,
+      "f1_Negativo": 0.8787,
+      "f1_Neutro": 0.4977,
+      "f1_Positivo": 0.9135,
+      "recall_Negativo": 0.93,
+      "recall_Neutro": 0.4737,
+      "recall_Positivo": 0.8982
+    },
+    {
+      "categoria": "Casa e Construção",
+      "n_test": 852,
+      "pct_negativo": 33.2,
+      "pct_neutro": 14.2,
+      "pct_positivo": 52.6,
+      "accuracy": 0.8439,
+      "f1_macro": 0.7523,
+      "f1_Negativo": 0.8938,
+      "f1_Neutro": 0.466,
+      "f1_Positivo": 0.8972,
+      "recall_Negativo": 0.9364,
+      "recall_Neutro": 0.3967,
+      "recall_Positivo": 0.9062
+    },
+    {
+      "categoria": "Informática",
+      "n_test": 822,
+      "pct_negativo": 28.6,
+      "pct_neutro": 15.8,
+      "pct_positivo": 55.6,
+      "accuracy": 0.8224,
+      "f1_macro": 0.7453,
+      "f1_Negativo": 0.8687,
+      "f1_Neutro": 0.4848,
+      "f1_Positivo": 0.8824,
+      "recall_Negativo": 0.9149,
+      "recall_Neutro": 0.4308,
+      "recall_Positivo": 0.8862
+    }
+  ],
+  "binary_scenario_comparison": {
+    "n_train_binary": 88678,
+    "n_test_binary": 22169,
+    "discarded_neutral_train": 12674,
+    "discarded_neutral_test": 3169,
+    "accuracy": 0.9477,
+    "f1_macro": 0.9388,
+    "precision_Negativo": 0.8721,
+    "recall_Negativo": 0.9633,
+    "f1_Negativo": 0.9155,
+    "precision_Positivo": 0.984,
+    "recall_Positivo": 0.9411,
+    "f1_Positivo": 0.9621,
+    "confusion_matrix": [
+      [
+        6281,
+        239
+      ],
+      [
+        921,
+        14728
+      ]
+    ]
+  },
+  "unseen_examples_validation": [
+    {
+      "texto_original": "Produto excelente, superou minhas expectativas e chegou antes do prazo!",
+      "texto_tratado": "produto excelente superou expectativas chegou antes prazo",
+      "texto_nltk_sem_protecao": "produto excelente superou expectativas chegou antes prazo",
+      "pred_id": 2,
+      "sentimento": "Positivo",
+      "score_kind": "confianca_softmax_margem",
+      "method_note": "contribuição linear (valor_feature × peso_coef)",
+      "probabilidades": {
+        "Negativo": 0.0214608156825206,
+        "Neutro": 0.064431338972963,
+        "Positivo": 0.9141078453445164
+      },
+      "tokens_matched": 13,
+      "top_tokens_predicted": [
+        {
+          "token": "excelente",
+          "valor_feature": 0.1811,
+          "contrib_Negativo": -0.6958,
+          "contrib_Neutro": -0.4378,
+          "contrib_Positivo": 0.7223,
+          "contrib_classe_prevista": 0.7223
+        },
+        {
+          "token": "superou",
+          "valor_feature": 0.3001,
+          "contrib_Negativo": -0.2042,
+          "contrib_Neutro": -0.0974,
+          "contrib_Positivo": 0.2014,
+          "contrib_classe_prevista": 0.2014
+        },
+        {
+          "token": "expectativas",
+          "valor_feature": 0.2345,
+          "contrib_Negativo": -0.3136,
+          "contrib_Neutro": -0.0293,
+          "contrib_Positivo": 0.1983,
+          "contrib_classe_prevista": 0.1983
+        },
+        {
+          "token": "produto excelente",
+          "valor_feature": 0.2638,
+          "contrib_Negativo": -0.2724,
+          "contrib_Neutro": -0.0574,
+          "contrib_Positivo": 0.1864,
+          "contrib_classe_prevista": 0.1864
+        },
+        {
+          "token": "superou expectativas",
+          "valor_feature": 0.3172,
+          "contrib_Negativo": -0.0964,
+          "contrib_Neutro": -0.1207,
+          "contrib_Positivo": 0.1246,
+          "contrib_classe_prevista": 0.1246
+        },
+        {
+          "token": "antes",
+          "valor_feature": 0.1892,
+          "contrib_Negativo": -0.1129,
+          "contrib_Neutro": -0.0414,
+          "contrib_Positivo": 0.1202,
+          "contrib_classe_prevista": 0.1202
+        }
+      ],
+      "all_token_contributions": [
+        {
+          "token": "excelente",
+          "valor_feature": 0.1811,
+          "contrib_Negativo": -0.6958,
+          "contrib_Neutro": -0.4378,
+          "contrib_Positivo": 0.7223,
+          "contrib_classe_prevista": 0.7223
+        },
+        {
+          "token": "superou",
+          "valor_feature": 0.3001,
+          "contrib_Negativo": -0.2042,
+          "contrib_Neutro": -0.0974,
+          "contrib_Positivo": 0.2014,
+          "contrib_classe_prevista": 0.2014
+        },
+        {
+          "token": "expectativas",
+          "valor_feature": 0.2345,
+          "contrib_Negativo": -0.3136,
+          "contrib_Neutro": -0.0293,
+          "contrib_Positivo": 0.1983,
+          "contrib_classe_prevista": 0.1983
+        },
+        {
+          "token": "produto excelente",
+          "valor_feature": 0.2638,
+          "contrib_Negativo": -0.2724,
+          "contrib_Neutro": -0.0574,
+          "contrib_Positivo": 0.1864,
+          "contrib_classe_prevista": 0.1864
+        },
+        {
+          "token": "superou expectativas",
+          "valor_feature": 0.3172,
+          "contrib_Negativo": -0.0964,
+          "contrib_Neutro": -0.1207,
+          "contrib_Positivo": 0.1246,
+          "contrib_classe_prevista": 0.1246
+        },
+        {
+          "token": "antes",
+          "valor_feature": 0.1892,
+          "contrib_Negativo": -0.1129,
+          "contrib_Neutro": -0.0414,
+          "contrib_Positivo": 0.1202,
+          "contrib_classe_prevista": 0.1202
+        },
+        {
+          "token": "expectativas chegou",
+          "valor_feature": 0.4337,
+          "contrib_Negativo": -0.0234,
+          "contrib_Neutro": 0.0888,
+          "contrib_Positivo": -0.0849,
+          "contrib_classe_prevista": -0.0849
+        },
+        {
+          "token": "prazo",
+          "valor_feature": 0.176,
+          "contrib_Negativo": -0.1573,
+          "contrib_Neutro": 0.0474,
+          "contrib_Positivo": 0.0814,
+          "contrib_classe_prevista": 0.0814
+        },
+        {
+          "token": "produto",
+          "valor_feature": 0.1006,
+          "contrib_Negativo": 0.0938,
+          "contrib_Neutro": -0.017,
+          "contrib_Positivo": -0.0633,
+          "contrib_classe_prevista": -0.0633
+        },
+        {
+          "token": "antes prazo",
+          "valor_feature": 0.2171,
+          "contrib_Negativo": -0.1552,
+          "contrib_Neutro": -0.0156,
+          "contrib_Positivo": 0.0521,
+          "contrib_classe_prevista": 0.0521
+        },
+        {
+          "token": "chegou",
+          "valor_feature": 0.1769,
+          "contrib_Negativo": 0.0958,
+          "contrib_Neutro": -0.0888,
+          "contrib_Positivo": -0.0275,
+          "contrib_classe_prevista": -0.0275
+        },
+        {
+          "token": "excelente superou",
+          "valor_feature": 0.4938,
+          "contrib_Negativo": -0.0036,
+          "contrib_Neutro": -0.0504,
+          "contrib_Positivo": 0.0241,
+          "contrib_classe_prevista": 0.0241
+        },
+        {
+          "token": "chegou antes",
+          "valor_feature": 0.2541,
+          "contrib_Negativo": -0.1124,
+          "contrib_Neutro": 0.0742,
+          "contrib_Positivo": 0.0147,
+          "contrib_classe_prevista": 0.0147
+        }
+      ]
+    },
+    {
+      "texto_original": "O produto não funciona direito e não recomendo para ninguém.",
+      "texto_tratado": "produto não funciona direito não recomendo ninguém",
+      "texto_nltk_sem_protecao": "produto funciona direito recomendo ninguém",
+      "pred_id": 0,
+      "sentimento": "Negativo",
+      "score_kind": "confianca_softmax_margem",
+      "method_note": "contribuição linear (valor_feature × peso_coef)",
+      "probabilidades": {
+        "Negativo": 0.9622641028124214,
+        "Neutro": 0.023197590246899196,
+        "Positivo": 0.014538306940679507
+      },
+      "tokens_matched": 12,
+      "top_tokens_predicted": [
+        {
+          "token": "não recomendo",
+          "valor_feature": 0.2393,
+          "contrib_Negativo": 0.8191,
+          "contrib_Neutro": -0.3219,
+          "contrib_Positivo": -0.5262,
+          "contrib_classe_prevista": 0.8191
+        },
+        {
+          "token": "não",
+          "valor_feature": 0.1828,
+          "contrib_Negativo": 0.7029,
+          "contrib_Neutro": 0.0173,
+          "contrib_Positivo": -0.6312,
+          "contrib_classe_prevista": 0.7029
+        },
+        {
+          "token": "não funciona",
+          "valor_feature": 0.2855,
+          "contrib_Negativo": 0.5285,
+          "contrib_Neutro": -0.4139,
+          "contrib_Positivo": -0.2634,
+          "contrib_classe_prevista": 0.5285
+        },
+        {
+          "token": "recomendo",
+          "valor_feature": 0.1308,
+          "contrib_Negativo": -0.3776,
+          "contrib_Neutro": -0.0807,
+          "contrib_Positivo": 0.2356,
+          "contrib_classe_prevista": -0.3776
+        },
+        {
+          "token": "ninguém",
+          "valor_feature": 0.2785,
+          "contrib_Negativo": 0.2685,
+          "contrib_Neutro": -0.1464,
+          "contrib_Positivo": -0.1889,
+          "contrib_classe_prevista": 0.2685
+        },
+        {
+          "token": "produto não",
+          "valor_feature": 0.2338,
+          "contrib_Negativo": 0.1885,
+          "contrib_Neutro": -0.1185,
+          "contrib_Positivo": -0.1593,
+          "contrib_classe_prevista": 0.1885
+        }
+      ],
+      "all_token_contributions": [
+        {
+          "token": "não recomendo",
+          "valor_feature": 0.2393,
+          "contrib_Negativo": 0.8191,
+          "contrib_Neutro": -0.3219,
+          "contrib_Positivo": -0.5262,
+          "contrib_classe_prevista": 0.8191
+        },
+        {
+          "token": "não",
+          "valor_feature": 0.1828,
+          "contrib_Negativo": 0.7029,
+          "contrib_Neutro": 0.0173,
+          "contrib_Positivo": -0.6312,
+          "contrib_classe_prevista": 0.7029
+        },
+        {
+          "token": "não funciona",
+          "valor_feature": 0.2855,
+          "contrib_Negativo": 0.5285,
+          "contrib_Neutro": -0.4139,
+          "contrib_Positivo": -0.2634,
+          "contrib_classe_prevista": 0.5285
+        },
+        {
+          "token": "recomendo",
+          "valor_feature": 0.1308,
+          "contrib_Negativo": -0.3776,
+          "contrib_Neutro": -0.0807,
+          "contrib_Positivo": 0.2356,
+          "contrib_classe_prevista": -0.3776
+        },
+        {
+          "token": "ninguém",
+          "valor_feature": 0.2785,
+          "contrib_Negativo": 0.2685,
+          "contrib_Neutro": -0.1464,
+          "contrib_Positivo": -0.1889,
+          "contrib_classe_prevista": 0.2685
+        },
+        {
+          "token": "produto não",
+          "valor_feature": 0.2338,
+          "contrib_Negativo": 0.1885,
+          "contrib_Neutro": -0.1185,
+          "contrib_Positivo": -0.1593,
+          "contrib_classe_prevista": 0.1885
+        },
+        {
+          "token": "direito",
+          "valor_feature": 0.3168,
+          "contrib_Negativo": 0.1857,
+          "contrib_Neutro": -0.0732,
+          "contrib_Positivo": -0.1433,
+          "contrib_classe_prevista": 0.1857
+        },
+        {
+          "token": "recomendo ninguém",
+          "valor_feature": 0.3646,
+          "contrib_Negativo": 0.1266,
+          "contrib_Neutro": -0.0942,
+          "contrib_Positivo": -0.0621,
+          "contrib_classe_prevista": 0.1266
+        },
+        {
+          "token": "produto",
+          "valor_feature": 0.0875,
+          "contrib_Negativo": 0.0816,
+          "contrib_Neutro": -0.0148,
+          "contrib_Positivo": -0.055,
+          "contrib_classe_prevista": 0.0816
+        },
+        {
+          "token": "funciona direito",
+          "valor_feature": 0.4249,
+          "contrib_Negativo": -0.0734,
+          "contrib_Neutro": 0.1243,
+          "contrib_Positivo": -0.0244,
+          "contrib_classe_prevista": -0.0734
+        },
+        {
+          "token": "direito não",
+          "valor_feature": 0.4538,
+          "contrib_Negativo": 0.0448,
+          "contrib_Neutro": -0.0388,
+          "contrib_Positivo": -0.0262,
+          "contrib_classe_prevista": 0.0448
+        },
+        {
+          "token": "funciona",
+          "valor_feature": 0.2261,
+          "contrib_Negativo": 0.0132,
+          "contrib_Neutro": 0.0566,
+          "contrib_Positivo": -0.0842,
+          "contrib_classe_prevista": 0.0132
+        }
+      ]
+    },
+    {
+      "texto_original": "O celular é ótimo, mas a entrega atrasou duas semanas e veio com a caixa rasgada.",
+      "texto_tratado": "celular ótimo mas entrega atrasou duas semanas veio caixa rasgada",
+      "texto_nltk_sem_protecao": "celular ótimo entrega atrasou duas semanas veio caixa rasgada",
+      "pred_id": 2,
+      "sentimento": "Positivo",
+      "score_kind": "confianca_softmax_margem",
+      "method_note": "contribuição linear (valor_feature × peso_coef)",
+      "probabilidades": {
+        "Negativo": 0.3020248039594202,
+        "Neutro": 0.1730251422844068,
+        "Positivo": 0.524950053756173
+      },
+      "tokens_matched": 17,
+      "top_tokens_predicted": [
+        {
+          "token": "ótimo",
+          "valor_feature": 0.1249,
+          "contrib_Negativo": -0.4268,
+          "contrib_Neutro": -0.1868,
+          "contrib_Positivo": 0.3797,
+          "contrib_classe_prevista": 0.3797
+        },
+        {
+          "token": "veio",
+          "valor_feature": 0.1372,
+          "contrib_Negativo": 0.2231,
+          "contrib_Neutro": 0.0081,
+          "contrib_Positivo": -0.1889,
+          "contrib_classe_prevista": -0.1889
+        },
+        {
+          "token": "celular ótimo",
+          "valor_feature": 0.2746,
+          "contrib_Negativo": -0.0323,
+          "contrib_Neutro": -0.1187,
+          "contrib_Positivo": 0.0983,
+          "contrib_classe_prevista": 0.0983
+        },
+        {
+          "token": "rasgada",
+          "valor_feature": 0.2955,
+          "contrib_Negativo": 0.1548,
+          "contrib_Neutro": -0.0467,
+          "contrib_Positivo": -0.0924,
+          "contrib_classe_prevista": -0.0924
+        },
+        {
+          "token": "mas",
+          "valor_feature": 0.1113,
+          "contrib_Negativo": -0.0827,
+          "contrib_Neutro": 0.2272,
+          "contrib_Positivo": -0.089,
+          "contrib_classe_prevista": -0.089
+        },
+        {
+          "token": "atrasou",
+          "valor_feature": 0.2659,
+          "contrib_Negativo": -0.0624,
+          "contrib_Neutro": -0.0516,
+          "contrib_Positivo": 0.0854,
+          "contrib_classe_prevista": 0.0854
+        }
+      ],
+      "all_token_contributions": [
+        {
+          "token": "ótimo",
+          "valor_feature": 0.1249,
+          "contrib_Negativo": -0.4268,
+          "contrib_Neutro": -0.1868,
+          "contrib_Positivo": 0.3797,
+          "contrib_classe_prevista": 0.3797
+        },
+        {
+          "token": "veio",
+          "valor_feature": 0.1372,
+          "contrib_Negativo": 0.2231,
+          "contrib_Neutro": 0.0081,
+          "contrib_Positivo": -0.1889,
+          "contrib_classe_prevista": -0.1889
+        },
+        {
+          "token": "celular ótimo",
+          "valor_feature": 0.2746,
+          "contrib_Negativo": -0.0323,
+          "contrib_Neutro": -0.1187,
+          "contrib_Positivo": 0.0983,
+          "contrib_classe_prevista": 0.0983
+        },
+        {
+          "token": "rasgada",
+          "valor_feature": 0.2955,
+          "contrib_Negativo": 0.1548,
+          "contrib_Neutro": -0.0467,
+          "contrib_Positivo": -0.0924,
+          "contrib_classe_prevista": -0.0924
+        },
+        {
+          "token": "mas",
+          "valor_feature": 0.1113,
+          "contrib_Negativo": -0.0827,
+          "contrib_Neutro": 0.2272,
+          "contrib_Positivo": -0.089,
+          "contrib_classe_prevista": -0.089
+        },
+        {
+          "token": "atrasou",
+          "valor_feature": 0.2659,
+          "contrib_Negativo": -0.0624,
+          "contrib_Neutro": -0.0516,
+          "contrib_Positivo": 0.0854,
+          "contrib_classe_prevista": 0.0854
+        },
+        {
+          "token": "duas semanas",
+          "valor_feature": 0.2741,
+          "contrib_Negativo": -0.0118,
+          "contrib_Neutro": -0.0923,
+          "contrib_Positivo": 0.0546,
+          "contrib_classe_prevista": 0.0546
+        },
+        {
+          "token": "veio caixa",
+          "valor_feature": 0.2941,
+          "contrib_Negativo": -0.0529,
+          "contrib_Neutro": -0.0165,
+          "contrib_Positivo": 0.0495,
+          "contrib_classe_prevista": 0.0495
+        },
+        {
+          "token": "mas entrega",
+          "valor_feature": 0.277,
+          "contrib_Negativo": 0.0097,
+          "contrib_Neutro": -0.0342,
+          "contrib_Positivo": 0.0482,
+          "contrib_classe_prevista": 0.0482
+        },
+        {
+          "token": "celular",
+          "valor_feature": 0.1572,
+          "contrib_Negativo": 0.0161,
+          "contrib_Neutro": -0.0783,
+          "contrib_Positivo": 0.0458,
+          "contrib_classe_prevista": 0.0458
+        },
+        {
+          "token": "duas",
+          "valor_feature": 0.2001,
+          "contrib_Negativo": 0.0847,
+          "contrib_Neutro": -0.0544,
+          "contrib_Positivo": -0.0412,
+          "contrib_classe_prevista": -0.0412
+        },
+        {
+          "token": "semanas",
+          "valor_feature": 0.2407,
+          "contrib_Negativo": 0.0695,
+          "contrib_Neutro": -0.016,
+          "contrib_Positivo": -0.0405,
+          "contrib_classe_prevista": -0.0405
+        },
+        {
+          "token": "entrega",
+          "valor_feature": 0.1013,
+          "contrib_Negativo": -0.0443,
+          "contrib_Neutro": 0.0004,
+          "contrib_Positivo": 0.0303,
+          "contrib_classe_prevista": 0.0303
+        },
+        {
+          "token": "caixa",
+          "valor_feature": 0.1985,
+          "contrib_Negativo": 0.0044,
+          "contrib_Neutro": 0.0201,
+          "contrib_Positivo": -0.0264,
+          "contrib_classe_prevista": -0.0264
+        },
+        {
+          "token": "ótimo mas",
+          "valor_feature": 0.2895,
+          "contrib_Negativo": 0.1028,
+          "contrib_Neutro": -0.06,
+          "contrib_Positivo": -0.012,
+          "contrib_classe_prevista": -0.012
+        },
+        {
+          "token": "caixa rasgada",
+          "valor_feature": 0.3698,
+          "contrib_Negativo": 0.0094,
+          "contrib_Neutro": 0.0029,
+          "contrib_Positivo": -0.0115,
+          "contrib_classe_prevista": -0.0115
+        },
+        {
+          "token": "entrega atrasou",
+          "valor_feature": 0.2974,
+          "contrib_Negativo": 0.0091,
+          "contrib_Neutro": 0.0232,
+          "contrib_Positivo": -0.0107,
+          "contrib_classe_prevista": -0.0107
+        }
+      ]
+    },
+    {
+      "texto_original": "Produto mediano, funciona bem para o básico, nada demais pelo preço.",
+      "texto_tratado": "produto mediano funciona bem básico nada demais preço",
+      "texto_nltk_sem_protecao": "produto mediano funciona bem básico nada demais preço",
+      "pred_id": 1,
+      "sentimento": "Neutro",
+      "score_kind": "confianca_softmax_margem",
+      "method_note": "contribuição linear (valor_feature × peso_coef)",
+      "probabilidades": {
+        "Negativo": 0.24032848717843275,
+        "Neutro": 0.5806647327511331,
+        "Positivo": 0.17900678007043422
+      },
+      "tokens_matched": 13,
+      "top_tokens_predicted": [
+        {
+          "token": "básico",
+          "valor_feature": 0.2869,
+          "contrib_Negativo": 0.0117,
+          "contrib_Neutro": 0.2802,
+          "contrib_Positivo": -0.2112,
+          "contrib_classe_prevista": 0.2802
+        },
+        {
+          "token": "nada demais",
+          "valor_feature": 0.3559,
+          "contrib_Negativo": -0.0706,
+          "contrib_Neutro": 0.1513,
+          "contrib_Positivo": -0.0276,
+          "contrib_classe_prevista": 0.1513
+        },
+        {
+          "token": "bem básico",
+          "valor_feature": 0.3875,
+          "contrib_Negativo": 0.0675,
+          "contrib_Neutro": 0.1389,
+          "contrib_Positivo": -0.1189,
+          "contrib_classe_prevista": 0.1389
+        },
+        {
+          "token": "funciona bem",
+          "valor_feature": 0.2516,
+          "contrib_Negativo": -0.1669,
+          "contrib_Neutro": 0.13,
+          "contrib_Positivo": -0.0088,
+          "contrib_classe_prevista": 0.13
+        },
+        {
+          "token": "mediano",
+          "valor_feature": 0.3359,
+          "contrib_Negativo": 0.0362,
+          "contrib_Neutro": 0.1051,
+          "contrib_Positivo": -0.0731,
+          "contrib_classe_prevista": 0.1051
+        },
+        {
+          "token": "demais",
+          "valor_feature": 0.2101,
+          "contrib_Negativo": 0.0477,
+          "contrib_Neutro": -0.0781,
+          "contrib_Positivo": 0.0305,
+          "contrib_classe_prevista": -0.0781
+        }
+      ],
+      "all_token_contributions": [
+        {
+          "token": "básico",
+          "valor_feature": 0.2869,
+          "contrib_Negativo": 0.0117,
+          "contrib_Neutro": 0.2802,
+          "contrib_Positivo": -0.2112,
+          "contrib_classe_prevista": 0.2802
+        },
+        {
+          "token": "nada demais",
+          "valor_feature": 0.3559,
+          "contrib_Negativo": -0.0706,
+          "contrib_Neutro": 0.1513,
+          "contrib_Positivo": -0.0276,
+          "contrib_classe_prevista": 0.1513
+        },
+        {
+          "token": "bem básico",
+          "valor_feature": 0.3875,
+          "contrib_Negativo": 0.0675,
+          "contrib_Neutro": 0.1389,
+          "contrib_Positivo": -0.1189,
+          "contrib_classe_prevista": 0.1389
+        },
+        {
+          "token": "funciona bem",
+          "valor_feature": 0.2516,
+          "contrib_Negativo": -0.1669,
+          "contrib_Neutro": 0.13,
+          "contrib_Positivo": -0.0088,
+          "contrib_classe_prevista": 0.13
+        },
+        {
+          "token": "mediano",
+          "valor_feature": 0.3359,
+          "contrib_Negativo": 0.0362,
+          "contrib_Neutro": 0.1051,
+          "contrib_Positivo": -0.0731,
+          "contrib_classe_prevista": 0.1051
+        },
+        {
+          "token": "demais",
+          "valor_feature": 0.2101,
+          "contrib_Negativo": 0.0477,
+          "contrib_Neutro": -0.0781,
+          "contrib_Positivo": 0.0305,
+          "contrib_classe_prevista": -0.0781
+        },
+        {
+          "token": "produto mediano",
+          "valor_feature": 0.401,
+          "contrib_Negativo": 0.0278,
+          "contrib_Neutro": 0.057,
+          "contrib_Positivo": -0.0491,
+          "contrib_classe_prevista": 0.057
+        },
+        {
+          "token": "bem",
+          "valor_feature": 0.1193,
+          "contrib_Negativo": -0.1702,
+          "contrib_Neutro": 0.0526,
+          "contrib_Positivo": 0.0796,
+          "contrib_classe_prevista": 0.0526
+        },
+        {
+          "token": "preço",
+          "valor_feature": 0.1531,
+          "contrib_Negativo": -0.0291,
+          "contrib_Neutro": 0.0518,
+          "contrib_Positivo": -0.0174,
+          "contrib_classe_prevista": 0.0518
+        },
+        {
+          "token": "demais preço",
+          "valor_feature": 0.401,
+          "contrib_Negativo": -0.0369,
+          "contrib_Neutro": 0.0483,
+          "contrib_Positivo": 0.0067,
+          "contrib_classe_prevista": 0.0483
+        },
+        {
+          "token": "funciona",
+          "valor_feature": 0.175,
+          "contrib_Negativo": 0.0102,
+          "contrib_Neutro": 0.0438,
+          "contrib_Positivo": -0.0652,
+          "contrib_classe_prevista": 0.0438
+        },
+        {
+          "token": "nada",
+          "valor_feature": 0.1616,
+          "contrib_Negativo": 0.1411,
+          "contrib_Neutro": -0.0426,
+          "contrib_Positivo": -0.11,
+          "contrib_classe_prevista": -0.0426
+        },
+        {
+          "token": "produto",
+          "valor_feature": 0.0677,
+          "contrib_Negativo": 0.0631,
+          "contrib_Neutro": -0.0114,
+          "contrib_Positivo": -0.0426,
+          "contrib_classe_prevista": -0.0114
+        }
+      ]
+    },
+    {
+      "texto_original": "Não trava, bateria dura bastante e não me arrependo da compra!",
+      "texto_tratado": "não trava bateria dura bastante não arrependo compra",
+      "texto_nltk_sem_protecao": "trava bateria dura bastante arrependo compra",
+      "pred_id": 2,
+      "sentimento": "Positivo",
+      "score_kind": "confianca_softmax_margem",
+      "method_note": "contribuição linear (valor_feature × peso_coef)",
+      "probabilidades": {
+        "Negativo": 0.19751945165399196,
+        "Neutro": 0.11036739619240642,
+        "Positivo": 0.6921131521536016
+      },
+      "tokens_matched": 14,
+      "top_tokens_predicted": [
+        {
+          "token": "não",
+          "valor_feature": 0.1467,
+          "contrib_Negativo": 0.564,
+          "contrib_Neutro": 0.0139,
+          "contrib_Positivo": -0.5065,
+          "contrib_classe_prevista": -0.5065
+        },
+        {
+          "token": "não trava",
+          "valor_feature": 0.252,
+          "contrib_Negativo": -0.2757,
+          "contrib_Neutro": -0.2214,
+          "contrib_Positivo": 0.3851,
+          "contrib_classe_prevista": 0.3851
+        },
+        {
+          "token": "não arrependo",
+          "valor_feature": 0.3018,
+          "contrib_Negativo": -0.2336,
+          "contrib_Neutro": -0.0878,
+          "contrib_Positivo": 0.2512,
+          "contrib_classe_prevista": 0.2512
+        },
+        {
+          "token": "bateria dura",
+          "valor_feature": 0.2486,
+          "contrib_Negativo": -0.1289,
+          "contrib_Neutro": -0.1454,
+          "contrib_Positivo": 0.1762,
+          "contrib_classe_prevista": 0.1762
+        },
+        {
+          "token": "arrependo",
+          "valor_feature": 0.2842,
+          "contrib_Negativo": -0.1105,
+          "contrib_Neutro": -0.1059,
+          "contrib_Positivo": 0.164,
+          "contrib_classe_prevista": 0.164
+        },
+        {
+          "token": "bastante",
+          "valor_feature": 0.1913,
+          "contrib_Negativo": -0.2243,
+          "contrib_Neutro": -0.0169,
+          "contrib_Positivo": 0.1527,
+          "contrib_classe_prevista": 0.1527
+        }
+      ],
+      "all_token_contributions": [
+        {
+          "token": "não",
+          "valor_feature": 0.1467,
+          "contrib_Negativo": 0.564,
+          "contrib_Neutro": 0.0139,
+          "contrib_Positivo": -0.5065,
+          "contrib_classe_prevista": -0.5065
+        },
+        {
+          "token": "não trava",
+          "valor_feature": 0.252,
+          "contrib_Negativo": -0.2757,
+          "contrib_Neutro": -0.2214,
+          "contrib_Positivo": 0.3851,
+          "contrib_classe_prevista": 0.3851
+        },
+        {
+          "token": "não arrependo",
+          "valor_feature": 0.3018,
+          "contrib_Negativo": -0.2336,
+          "contrib_Neutro": -0.0878,
+          "contrib_Positivo": 0.2512,
+          "contrib_classe_prevista": 0.2512
+        },
+        {
+          "token": "bateria dura",
+          "valor_feature": 0.2486,
+          "contrib_Negativo": -0.1289,
+          "contrib_Neutro": -0.1454,
+          "contrib_Positivo": 0.1762,
+          "contrib_classe_prevista": 0.1762
+        },
+        {
+          "token": "arrependo",
+          "valor_feature": 0.2842,
+          "contrib_Negativo": -0.1105,
+          "contrib_Neutro": -0.1059,
+          "contrib_Positivo": 0.164,
+          "contrib_classe_prevista": 0.164
+        },
+        {
+          "token": "bastante",
+          "valor_feature": 0.1913,
+          "contrib_Negativo": -0.2243,
+          "contrib_Neutro": -0.0169,
+          "contrib_Positivo": 0.1527,
+          "contrib_classe_prevista": 0.1527
+        },
+        {
+          "token": "bastante não",
+          "valor_feature": 0.3572,
+          "contrib_Negativo": -0.015,
+          "contrib_Neutro": -0.123,
+          "contrib_Positivo": 0.0986,
+          "contrib_classe_prevista": 0.0986
+        },
+        {
+          "token": "trava",
+          "valor_feature": 0.2199,
+          "contrib_Negativo": 0.1802,
+          "contrib_Neutro": -0.0806,
+          "contrib_Positivo": -0.0749,
+          "contrib_classe_prevista": -0.0749
+        },
+        {
+          "token": "trava bateria",
+          "valor_feature": 0.3536,
+          "contrib_Negativo": -0.0889,
+          "contrib_Neutro": -0.0254,
+          "contrib_Positivo": 0.0701,
+          "contrib_classe_prevista": 0.0701
+        },
+        {
+          "token": "bateria",
+          "valor_feature": 0.1872,
+          "contrib_Negativo": 0.0577,
+          "contrib_Neutro": 0.0023,
+          "contrib_Positivo": -0.0427,
+          "contrib_classe_prevista": -0.0427
+        },
+        {
+          "token": "dura bastante",
+          "valor_feature": 0.3009,
+          "contrib_Negativo": -0.0818,
+          "contrib_Neutro": 0.0332,
+          "contrib_Positivo": 0.0384,
+          "contrib_classe_prevista": 0.0384
+        },
+        {
+          "token": "arrependo compra",
+          "valor_feature": 0.3832,
+          "contrib_Negativo": 0.0201,
+          "contrib_Neutro": 0.0277,
+          "contrib_Positivo": -0.0226,
+          "contrib_classe_prevista": -0.0226
+        },
+        {
+          "token": "dura",
+          "valor_feature": 0.2206,
+          "contrib_Negativo": 0.0037,
+          "contrib_Neutro": -0.0139,
+          "contrib_Positivo": 0.0212,
+          "contrib_classe_prevista": 0.0212
+        },
+        {
+          "token": "compra",
+          "valor_feature": 0.1502,
+          "contrib_Negativo": 0.0333,
+          "contrib_Neutro": -0.0255,
+          "contrib_Positivo": -0.0009,
+          "contrib_classe_prevista": -0.0009
+        }
+      ]
+    },
+    {
+      "texto_original": "Parabéns pela transportadora incrível, só levou dois meses para entregar um produto quebrado.",
+      "texto_tratado": "parabéns transportadora incrível só levou dois meses entregar produto quebrado",
+      "texto_nltk_sem_protecao": "parabéns transportadora incrível levou dois meses entregar produto quebrado",
+      "pred_id": 2,
+      "sentimento": "Positivo",
+      "score_kind": "confianca_softmax_margem",
+      "method_note": "contribuição linear (valor_feature × peso_coef)",
+      "probabilidades": {
+        "Negativo": 0.3331242733737235,
+        "Neutro": 0.19811568694190487,
+        "Positivo": 0.4687600396843716
+      },
+      "tokens_matched": 17,
+      "top_tokens_predicted": [
+        {
+          "token": "incrível",
+          "valor_feature": 0.2127,
+          "contrib_Negativo": -0.1825,
+          "contrib_Neutro": -0.168,
+          "contrib_Positivo": 0.2537,
+          "contrib_classe_prevista": 0.2537
+        },
+        {
+          "token": "parabéns",
+          "valor_feature": 0.1491,
+          "contrib_Negativo": -0.2106,
+          "contrib_Neutro": -0.0778,
+          "contrib_Positivo": 0.1874,
+          "contrib_classe_prevista": 0.1874
+        },
+        {
+          "token": "quebrado",
+          "valor_feature": 0.2043,
+          "contrib_Negativo": 0.2055,
+          "contrib_Neutro": -0.074,
+          "contrib_Positivo": -0.1547,
+          "contrib_classe_prevista": -0.1547
+        },
+        {
+          "token": "meses",
+          "valor_feature": 0.177,
+          "contrib_Negativo": 0.1903,
+          "contrib_Neutro": -0.1215,
+          "contrib_Positivo": -0.1024,
+          "contrib_classe_prevista": -0.1024
+        },
+        {
+          "token": "levou",
+          "valor_feature": 0.2475,
+          "contrib_Negativo": -0.0536,
+          "contrib_Neutro": -0.0178,
+          "contrib_Positivo": 0.0617,
+          "contrib_classe_prevista": 0.0617
+        },
+        {
+          "token": "entregar produto",
+          "valor_feature": 0.2579,
+          "contrib_Negativo": 0.0654,
+          "contrib_Neutro": -0.0038,
+          "contrib_Positivo": -0.0538,
+          "contrib_classe_prevista": -0.0538
+        }
+      ],
+      "all_token_contributions": [
+        {
+          "token": "incrível",
+          "valor_feature": 0.2127,
+          "contrib_Negativo": -0.1825,
+          "contrib_Neutro": -0.168,
+          "contrib_Positivo": 0.2537,
+          "contrib_classe_prevista": 0.2537
+        },
+        {
+          "token": "parabéns",
+          "valor_feature": 0.1491,
+          "contrib_Negativo": -0.2106,
+          "contrib_Neutro": -0.0778,
+          "contrib_Positivo": 0.1874,
+          "contrib_classe_prevista": 0.1874
+        },
+        {
+          "token": "quebrado",
+          "valor_feature": 0.2043,
+          "contrib_Negativo": 0.2055,
+          "contrib_Neutro": -0.074,
+          "contrib_Positivo": -0.1547,
+          "contrib_classe_prevista": -0.1547
+        },
+        {
+          "token": "meses",
+          "valor_feature": 0.177,
+          "contrib_Negativo": 0.1903,
+          "contrib_Neutro": -0.1215,
+          "contrib_Positivo": -0.1024,
+          "contrib_classe_prevista": -0.1024
+        },
+        {
+          "token": "levou",
+          "valor_feature": 0.2475,
+          "contrib_Negativo": -0.0536,
+          "contrib_Neutro": -0.0178,
+          "contrib_Positivo": 0.0617,
+          "contrib_classe_prevista": 0.0617
+        },
+        {
+          "token": "entregar produto",
+          "valor_feature": 0.2579,
+          "contrib_Negativo": 0.0654,
+          "contrib_Neutro": -0.0038,
+          "contrib_Positivo": -0.0538,
+          "contrib_classe_prevista": -0.0538
+        },
+        {
+          "token": "entregar",
+          "valor_feature": 0.1937,
+          "contrib_Negativo": 0.0564,
+          "contrib_Neutro": 0.0078,
+          "contrib_Positivo": -0.052,
+          "contrib_classe_prevista": -0.052
+        },
+        {
+          "token": "só",
+          "valor_feature": 0.1222,
+          "contrib_Negativo": -0.0948,
+          "contrib_Neutro": 0.0374,
+          "contrib_Positivo": 0.0468,
+          "contrib_classe_prevista": 0.0468
+        },
+        {
+          "token": "produto quebrado",
+          "valor_feature": 0.2909,
+          "contrib_Negativo": 0.0878,
+          "contrib_Neutro": -0.0866,
+          "contrib_Positivo": -0.0358,
+          "contrib_classe_prevista": -0.0358
+        },
+        {
+          "token": "produto",
+          "valor_feature": 0.0567,
+          "contrib_Negativo": 0.0529,
+          "contrib_Neutro": -0.0096,
+          "contrib_Positivo": -0.0357,
+          "contrib_classe_prevista": -0.0357
+        },
+        {
+          "token": "só levou",
+          "valor_feature": 0.341,
+          "contrib_Negativo": 0.0051,
+          "contrib_Neutro": -0.0513,
+          "contrib_Positivo": 0.0249,
+          "contrib_classe_prevista": 0.0249
+        },
+        {
+          "token": "transportadora",
+          "valor_feature": 0.1913,
+          "contrib_Negativo": -0.0719,
+          "contrib_Neutro": 0.0957,
+          "contrib_Positivo": 0.0242,
+          "contrib_classe_prevista": 0.0242
+        },
+        {
+          "token": "meses entregar",
+          "valor_feature": 0.341,
+          "contrib_Negativo": -0.0225,
+          "contrib_Neutro": 0.0881,
+          "contrib_Positivo": -0.0223,
+          "contrib_classe_prevista": -0.0223
+        },
+        {
+          "token": "dois meses",
+          "valor_feature": 0.2398,
+          "contrib_Negativo": 0.0152,
+          "contrib_Neutro": 0.0359,
+          "contrib_Positivo": -0.0216,
+          "contrib_classe_prevista": -0.0216
+        },
+        {
+          "token": "dois",
+          "valor_feature": 0.1714,
+          "contrib_Negativo": 0.005,
+          "contrib_Neutro": 0.0208,
+          "contrib_Positivo": -0.02,
+          "contrib_classe_prevista": -0.02
+        },
+        {
+          "token": "incrível só",
+          "valor_feature": 0.3539,
+          "contrib_Negativo": -0.0062,
+          "contrib_Neutro": -0.0291,
+          "contrib_Positivo": 0.0194,
+          "contrib_classe_prevista": 0.0194
+        },
+        {
+          "token": "parabéns transportadora",
+          "valor_feature": 0.3318,
+          "contrib_Negativo": -0.0066,
+          "contrib_Neutro": -0.0182,
+          "contrib_Positivo": 0.012,
+          "contrib_classe_prevista": 0.012
+        }
+      ]
+    }
+  ],
+  "figures": {
+    "confusion_matrices_comparison": "reports/figures/12_matrizes_confusao_comparacao.png",
+    "category_performance": "reports/figures/13_desempenho_por_categoria.png",
+    "error_and_noise_analysis": "reports/figures/14_analise_erros_e_ruido.png",
+    "negative_recall_comparison": "reports/figures/15_recall_negativo_comparacao.png"
+  }
+}
