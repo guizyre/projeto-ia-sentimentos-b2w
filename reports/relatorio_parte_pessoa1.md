@@ -1,7 +1,7 @@
-# Relatório Técnico — Parte da Pessoa 1 (Seções 1 a 3)
+# Relatório Técnico — Parte da Pessoa 1 (Seções 1 a 4)
 **Projeto 2: Classificação Automática de Sentimentos em Avaliações de Produtos**  
 **Disciplina:** Inteligência Artificial – Unidade 3 (IFPB – Bacharelado em Engenharia da Computação)  
-**Responsável por esta seção:** Pessoa 1 (Caracterização do Problema/Corpus, Análise Exploratória e Pré-processamento PLN)
+**Responsável por esta seção:** Guilherme Gonçalves (Caracterização do Problema/Corpus, Análise Exploratória e Pré-processamento PLN)
 
 ---
 
@@ -19,6 +19,7 @@ O objetivo deste projeto é desenvolver, avaliar e demonstrar um pipeline comple
 Utilizou-se o corpus aberto **B2W-Reviews01**, disponibilizado pela Americanas Tech no repositório oficial [`github.com/americanas-tech/b2w-reviews01`](https://github.com/americanas-tech/b2w-reviews01) (com espelho no Hugging Face em `ruanchaves/b2w-reviews01`).
 
 - **Domínio e período de coleta:** Avaliações reais de clientes no site *Americanas.com* coletadas entre **1º de janeiro e 31 de maio de 2018** (`2018-01-01 00:11:28` a `2018-05-31 23:50:33`).
+- **Versão e data de acesso:** Versão `1.0` oficial, obtida em **23 de novembro de 2026**.
 - **Idioma:** Português brasileiro (`pt-BR`).
 - **Dimensão bruta:** `132.373` registros e `14` colunas.
 - **Licença:** *Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International* (**CC BY-NC-SA 4.0**), que autoriza uso acadêmico e não comercial mediante atribuição obrigatória. Para respeitar as condições de distribuição, o arquivo bruto `B2W-Reviews01.csv` não é versionado no repositório Git (listado no `.gitignore`); o módulo `src/data_loader.py` e o `README.md` documentam integralmente o procedimento reproduzível de obtenção.

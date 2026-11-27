@@ -2,7 +2,7 @@
 Módulo de avaliação experimental, análise de erros, ruído de rótulos,
 desempenho por categoria e explicabilidade para inferência em tempo real.
 
-Responsável: Pessoa 3 (Avaliação Crítica, Ética e Interface Streamlit)
+Responsável: Hillary Maximino (Pessoa 3 – Avaliação Crítica, Ética e Interface Streamlit)
 Projeto 2 – Classificação Automática de Sentimentos em Avaliações de Produtos
 Disciplina: Inteligência Artificial (Unidade 3) – IFPB
 
@@ -214,6 +214,10 @@ def build_comparison_dataframe(model_results: Dict[str, Any]) -> pd.DataFrame:
         final_cfg.get("classifier"),
         json.dumps(final_cfg.get("best_params", {}), sort_keys=True),
     )
+    feat_by_rep: Dict[str, int] = {
+        r["representation"]: int(r.get("n_features", 0))
+        for r in model_results.get("results", [])
+    }
 
     for r in model_results.get("results", []):
         rows.append(
@@ -257,7 +261,7 @@ def build_comparison_dataframe(model_results: Dict[str, Any]) -> pd.DataFrame:
                 "classifier": r["classifier"],
                 "classificador_label": CLF_LABELS.get(r["classifier"], r["classifier"]),
                 "hiperparametros": params_str,
-                "n_features": 78918 if r["representation"].endswith("_bi") else 15978,
+                "n_features": int(r.get("n_features") or feat_by_rep.get(r["representation"], 0)),
                 "cv_f1_macro": float(r["cv_f1_macro"]),
                 "accuracy": float(r["accuracy"]),
                 "f1_macro": float(r["f1_macro"]),
@@ -775,14 +779,22 @@ def evaluate_binary_scenario(
     y_train: pd.Series,
     X_test: pd.Series,
     y_test: pd.Series,
+    c_val: Optional[float] = None,
 ) -> Dict[str, Any]:
     """
     Experimento complementar (Funcionalidade 2 — Seção 2.4.2):
     Compara a regra padrão (3 classes: 1–2 Negativo, 3 Neutro, 4–5 Positivo)
     com o cenário binário (1–2 Negativo vs 4–5 Positivo, descartando a nota 3),
-    treinando `TF-IDF uni+bi + LinearSVC(C=0.1, balanced)` estritamente sobre
+    treinando `TF-IDF uni+bi + LinearSVC(balanced)` estritamente sobre
     `X_train` (sem data leakage) e avaliando em `X_test`.
     """
+    if c_val is None:
+        try:
+            mr = load_model_results()
+            c_val = float((mr.get("final") or {}).get("best_params", {}).get("clf__C", 0.1))
+        except Exception:
+            c_val = 0.1
+
     tr_mask = y_train != 1
     te_mask = y_test != 1
 
@@ -794,7 +806,7 @@ def evaluate_binary_scenario(
     pipe_bin = Pipeline(
         [
             ("vec", make_vectorizer("tfidf_bi")),
-            ("clf", LinearSVC(C=0.1, class_weight="balanced", random_state=SEED)),
+            ("clf", LinearSVC(C=c_val, class_weight="balanced", random_state=SEED)),
         ]
     )
     with warnings.catch_warnings():

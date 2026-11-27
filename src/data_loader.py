@@ -1,15 +1,16 @@
 """
 Módulo de carregamento, privacidade, limpeza, auditoria e rotulagem do corpus B2W-Reviews01.
 
-Responsável: Pessoa 1 (Engenharia de Dados, EDA e Pré-processamento PLN)
+Responsável: Guilherme Gonçalves (Pessoa 1 – Engenharia de Dados, EDA e Pré-processamento PLN)
 Projeto 2 – Classificação Automática de Sentimentos em Avaliações de Produtos
 Disciplina: Inteligência Artificial (Unidade 3) – IFPB
 
 Referência do Corpus:
-- Nome: B2W-Reviews01
+- Nome: B2W-Reviews01 (versão 1.0 – repositório oficial Americanas Tech)
 - Origem: https://github.com/americanas-tech/b2w-reviews01
 - Alternativa Hugging Face: https://huggingface.co/datasets/ruanchaves/b2w-reviews01
 - Período de coleta: Janeiro a Maio de 2018 (Americanas.com)
+- Data de acesso/obtenção: 23 de novembro de 2026
 - Licença: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
   (uso não comercial, com atribuição obrigatória; não redistribuir o CSV bruto no repositório).
 """
@@ -39,6 +40,8 @@ B2W_RAW_URL = (
 
 DATASET_METADATA: Dict[str, object] = {
     "name": "B2W-Reviews01",
+    "version": "1.0 (repositório oficial americanas-tech/b2w-reviews01)",
+    "access_date": "23 de novembro de 2026",
     "source_repo": "https://github.com/americanas-tech/b2w-reviews01",
     "huggingface_mirror": "https://huggingface.co/datasets/ruanchaves/b2w-reviews01",
     "collection_period": "Janeiro a Maio de 2018 (Americanas.com)",

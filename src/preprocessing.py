@@ -2,7 +2,7 @@
 Módulo de pré-processamento textual para Português (pt-BR) com preservação de
 acentuação e tratamento explícito de palavras de negação.
 
-Responsável: Pessoa 1 (Engenharia de Dados, EDA e Pré-processamento PLN)
+Responsável: Guilherme Gonçalves (Pessoa 1 – Engenharia de Dados, EDA e Pré-processamento PLN)
 Projeto 2 – Classificação Automática de Sentimentos em Avaliações de Produtos
 Disciplina: Inteligência Artificial (Unidade 3) – IFPB
 

@@ -1,7 +1,7 @@
 # Relatório Técnico — Parte da Pessoa 2 (Representação Textual e Modelagem)
 **Projeto 2: Classificação Automática de Sentimentos em Avaliações de Produtos**
 **Disciplina:** Inteligência Artificial – Unidade 3 (IFPB)
-**Responsável por esta seção:** Anaíza (Representação vetorial, classificadores, ajuste de hiperparâmetros)
+**Responsável por esta seção:** Anaíza Silva (Representação vetorial, classificadores, ajuste de hiperparâmetros)
 
 ---
 

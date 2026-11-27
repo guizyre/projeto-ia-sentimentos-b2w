@@ -237,11 +237,27 @@ class TestModelsAndEvaluationIntegration(unittest.TestCase):
         ]:
             self.assertTrue((FIGURES_DIR / fig_name).exists(), f"Figura ausente: {fig_name}")
 
-    def test_streamlit_app_syntax_valid(self) -> None:
+    def test_streamlit_app_syntax_and_assets_valid(self) -> None:
         app_path = PROJECT_ROOT / "app.py"
         self.assertTrue(app_path.exists())
         source = app_path.read_text(encoding="utf-8")
         ast.parse(source)
+
+        # Validar existência dos 4 resumos JSON e de todas as figuras referenciadas
+        for json_name in [
+            "eda_summary.json",
+            "preprocessing_summary.json",
+            "model_results.json",
+            "evaluation_summary.json",
+        ]:
+            self.assertTrue(
+                (PROJECT_ROOT / "reports" / json_name).exists(),
+                f"Resumo JSON ausente para o Streamlit: {json_name}",
+            )
+
+        for idx in range(1, 19):
+            matches = list(FIGURES_DIR.glob(f"{idx:02d}_*.png"))
+            self.assertEqual(len(matches), 1, f"Figura {idx:02d}_*.png ausente em reports/figures/")
 
 
 if __name__ == "__main__":

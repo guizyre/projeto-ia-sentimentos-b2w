@@ -1,7 +1,7 @@
 # Relatório Técnico — Parte da Pessoa 3 (Avaliação Crítica, Ética e Aplicação Streamlit)
 **Projeto 2: Classificação Automática de Sentimentos em Avaliações de Produtos**  
 **Disciplina:** Inteligência Artificial – Unidade 3 (IFPB – Bacharelado em Engenharia da Computação)  
-**Responsável por esta seção:** Pessoa 3 (Avaliação Experimental Crítica, Análise de Erros, Ética e Interface Streamlit)
+**Responsável por esta seção:** Hillary Maximino (Avaliação Experimental Crítica, Análise de Erros, Ética e Interface Streamlit)
 
 ---
 
@@ -172,8 +172,16 @@ A análise segmentada por `site_category_lv1` nas **Top 10 categorias** do conju
 Para integrar os módulos de todo o trio e atender integralmente às **7 funcionalidades obrigatórias da Seção 2.4**, implementou-se a aplicação web local `app.py` (executada via `streamlit run app.py`), com carregamento instantâneo por cache (`@st.cache_data` e `@st.cache_resource`) dos resumos JSON e pipelines `.joblib`:
 
 - **Aba 1 – Corpus, Rotulagem e Pré-processamento:** exibe KPIs da auditoria (`132.373 → 126.690`), funil de limpeza, **seletor interativo de regra de mapeamento** (comparando 3 classes, cenário binário com resultado experimental e regra customizada estrela por estrela), gráficos da EDA (`01..04`) e **comparador ao vivo de pré-processamento** (NLTK padrão sem proteção vs. nosso pipeline preservando acentos e negações vs. *negation marking*) + gráficos `05..08`.
+
+![Figura 16 — Interface Streamlit: Aba 1](figures/16_streamlit_aba1.png)
+
 - **Aba 2 – Comparação de Modelos, Métricas e Análise de Erros:** destaca o modelo final (`F1-Macro = 0,7318`), oferece tabela interativa filtrável das **20 configurações** (16 padrão + 4 ajustadas), **explorador dinâmico de Matriz de Confusão** para qualquer modelo, visualizações (`09`, `11`, `12`, `13`, `14`, `15`), desempenho por categoria (`site_category_lv1`) e explorador filtrável de erros reais e ruído de rótulos do `X_test`.
-- **Aba 3 – Simulador em Tempo Real (Exemplos Inéditos):** permite digitar qualquer avaliação inédita (ou testar 6 exemplos pré-prontos de 1 clique: elogio, negação, mista, neutro, negação positiva e ironia), escolher qualquer modelo ajustado ou combinação livre da grade padrão, e visualizar: sentimento previsto, gráfico de confiança por classe, auditoria do texto normalizado (alertando quais negações foram salvas), **gráfico e tabela dos tokens/bigramas que mais pesaram na decisão** (`explain_prediction()`), e comparação simultânea entre os 4 classificadores ajustados.
+
+![Figura 17 — Interface Streamlit: Aba 2](figures/17_streamlit_aba2.png)
+
+- **Aba 3 – Simulador em Tempo Real (Exemplos Inéditos):** permite digitar qualquer avaliação inédita (ou testar 6 exemplos pré-prontos de 1 clique: elogio, negação, mista, neutro, negação positiva e ironia), escolher qualquer modelo ajustado ou combinação livre da grade padrão, e visualizar: sentimento previsto, barras de confiança por classe, auditoria do texto normalizado (alertando quais negações foram salvas), **gráfico e tabela dos tokens/bigramas que mais pesaram na decisão** (`explain_prediction()`), e consenso simultâneo entre os 4 classificadores ajustados.
+
+![Figura 18 — Interface Streamlit: Aba 3](figures/18_streamlit_aba3.png)
 
 Adicionalmente, implementou-se a suíte de testes integrados **`tests/test_pipeline.py`** (10 testes automatizados executados via `python -m unittest discover -s tests -v`), cobrindo remoção de colunas pessoais, limpeza, preservação de acentos/negações, carregamento de todos os modelos salvos, explicabilidade nas três famílias de classificadores (`LinearSVC`, `LogisticRegression`, `MultinomialNB`), integridade dos resumos/figuras e validação sintática de `app.py`.
 
@@ -181,7 +189,7 @@ Adicionalmente, implementou-se a suíte de testes integrados **`tests/test_pipel
 
 ## 14. Declaração Transparente sobre Uso de IA Generativa (Seção 8)
 
-Ferramentas de Inteligência Artificial generativa foram utilizadas pela Pessoa 3 como apoio no desenvolvimento e revisão estrutural de `src/evaluation.py`, `notebooks/04_avaliacao_e_erros.ipynb`, `app.py` e `tests/test_pipeline.py`, bem como na revisão redacional deste relatório. Todas as métricas, matrizes de confusão, taxas de ruído, resultados por categoria e exemplos reais do `X_test` foram integralmente gerados, executados e verificados localmente sobre o corpus **B2W-Reviews01** e os modelos treinados pela equipe.
+Ferramentas de Inteligência Artificial generativa foram utilizadas por Hillary Maximino como apoio no desenvolvimento e revisão estrutural de `src/evaluation.py`, `notebooks/04_avaliacao_e_erros.ipynb`, `app.py` e `tests/test_pipeline.py`, bem como na revisão redacional deste relatório. Todas as métricas, matrizes de confusão, taxas de ruído, resultados por categoria e exemplos reais do `X_test` foram integralmente gerados, executados e verificados localmente sobre o corpus **B2W-Reviews01** e os modelos treinados pela equipe.
 
 ---
 
@@ -197,7 +205,7 @@ Ferramentas de Inteligência Artificial generativa foram utilizadas pela Pessoa 
 
 ---
 
-## 16. Roteiro Sugerido para Apresentação Oral — Bloco da Pessoa 3 (3 a 4 minutos)
+## 16. Roteiro Sugerido para Apresentação Oral — Bloco 3: Hillary Maximino (3 a 4 minutos)
 *(Não faz parte do corpo do relatório técnico.)*
 
 1. **Avaliação crítica e Perguntas 1–2 (~45 s):** Mostrar `12_matrizes_confusao_comparacao.png` e `15_recall_negativo_comparacao.png`. Destacar que o modelo final (`TF-IDF uni+bi + Linear SVM C=0,1 balanced`) atinge **F1-Macro 0,7318**, **Acurácia 83,78%** e **Recall Negativo de 91,38%** (apenas 3,1% das negativas viram falso positivo).

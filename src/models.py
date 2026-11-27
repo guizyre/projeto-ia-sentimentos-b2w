@@ -1,3 +1,12 @@
+"""
+Módulo de representação vetorial (BoW e TF-IDF com unigramas e bigramas),
+treinamento de classificadores e ajuste de hiperparâmetros sem data leakage.
+
+Responsável: Anaíza Silva (Pessoa 2 – Representação Textual e Modelagem)
+Projeto 2 – Classificação Automática de Sentimentos em Avaliações de Produtos
+Disciplina: Inteligência Artificial (Unidade 3) – IFPB
+"""
+
 from __future__ import annotations
 import json
 import time

@@ -18,9 +18,7 @@ data/*.parquet
 data/*.zip
 !data/.gitkeep
 
-# Modelos treinados pesados (opcional: remover daqui se quiser versionar modelos pequenos)
-models_saved/*.joblib
-models_saved/*.pkl
+# Modelos treinados (.joblib versionados em models_saved/ para execucao imediata do Streamlit)
 !models_saved/.gitkeep
 
 # Sistema operacional e IDEs
